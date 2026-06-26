@@ -2,11 +2,11 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>Misi Sekolah Hijau</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
 html,body{width:100%;height:100%;overflow:hidden;font-family:'Nunito',sans-serif}
 
 /* === 16:9 FIXED RATIO - STRICT MODE === */
@@ -32,7 +32,7 @@ img{max-width:100%;display:block}
 .bg-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .bg-overlay{position:absolute;inset:0;z-index:-1}
 .bg-overlay-dark{background:linear-gradient(180deg,rgba(10,40,25,.02),rgba(10,40,25,.08))}
-.subtitle-home{font-size:clamp(1.05rem,3vw,1.3rem);font-weight:700;color:#fff;text-align:center;text-shadow:0 1px 4px rgba(0,0,0,.4);line-height:1.35;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-radius:16px;padding:.7rem 1.2rem;max-width:400px;margin:0 auto 1.8rem}
+.subtitle-home{font-size:clamp(0.9rem,2.6vw,1.15rem);font-weight:700;color:#fff;text-align:center;text-shadow:0 1px 4px rgba(0,0,0,.4);line-height:1.3;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-radius:16px;padding:.7rem 1.5rem;max-width:480px;margin:0 auto 1.8rem}
 
 .title-main{font-size:clamp(2.2rem,7vw,4rem);font-weight:900;color:#fff;text-shadow:0 0 0 #fff,0 0 0 #fff,0 0 0 #fff,-3px -3px 0 #14532d,3px -3px 0 #14532d,-3px 3px 0 #14532d,3px 3px 0 #14532d,0 6px 12px rgba(20,83,45,.5);line-height:1.15;text-align:center;letter-spacing:.02em;-webkit-text-stroke:1px rgba(255,255,255,.3)}
 .title-section{font-size:clamp(1.4rem,4.5vw,2.2rem);font-weight:800;color:#15803d;text-align:center;text-shadow:0 2px 4px rgba(0,0,0,.08)}
@@ -115,10 +115,11 @@ img{max-width:100%;display:block}
 .trash-organic{background:#f9fafb;border:2px solid #d1d5db;color:#374151}
 .trash-anorganic{background:#f9fafb;border:2px solid #d1d5db;color:#374151}
 .level1-shell{width:100%;max-width:600px;margin-top:-.5rem;display:flex;flex-direction:column;align-items:center}
-.level1-title{font-size:clamp(2.2rem,6.5vw,3rem)!important;font-weight:900!important;color:#16a34a!important;text-shadow:-3px -3px 0 #fff,3px -3px 0 #fff,-3px 3px 0 #fff,3px 3px 0 #fff,0 6px 12px rgba(0,0,0,.2)!important;letter-spacing:.02em;margin-bottom:.6rem!important;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.level1-title,.level2-title,.level3-title,.level4-title{font-size:clamp(2.2rem,6.5vw,3rem)!important;font-weight:900!important;color:#16a34a!important;text-shadow:-3px -3px 0 #fff,3px -3px 0 #fff,-3px 3px 0 #fff,3px 3px 0 #fff,0 6px 12px rgba(0,0,0,.2)!important;letter-spacing:.02em;margin-bottom:.6rem!important;display:flex;align-items:center;justify-content:center;gap:.5rem}
 .level1-title-icon{font-size:1.15em;display:inline-block}
 .level1-subtitle{font-size:clamp(.95rem,2.5vw,1.12rem)!important;font-weight:600!important;color:#14532d!important;text-shadow:0 1px 3px rgba(255,255,255,.8)!important;background:rgba(255,255,255,.78);display:inline-block;padding:.6rem 1.5rem;border-radius:999px;margin:0 auto 1.1rem!important;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .level1-card{padding:1.1rem 1rem .9rem!important;max-width:580px;background:rgba(255,255,255,.88)!important}
+.mission-badge{background:rgba(255,255,255,.88)!important;border-radius:999px;padding:.3rem .7rem!important;font-size:.72rem!important;font-weight:800;color:#15803d;box-shadow:0 2px 8px rgba(0,0,0,.08)!important;display:inline-block;text-align:center}
 .level1-badge{background:rgba(255,255,255,.88)!important;border-radius:999px;padding:.3rem .7rem!important;font-size:.72rem!important;box-shadow:0 2px 8px rgba(0,0,0,.08)!important}
 .level1-trash-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem 1rem;min-height:auto!important;margin-bottom:.9rem!important;align-items:stretch}
 .level1-trash-grid .trash-item{width:100%;min-height:68px;justify-content:center;text-align:center;padding:.7rem .65rem;gap:.45rem;box-shadow:0 4px 12px rgba(0,0,0,.08);cursor:grab;transition:all .15s ease;border-radius:14px}
@@ -143,7 +144,7 @@ img{max-width:100%;display:block}
 
 .level2-wrapper{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center}
 .level2-header{position:absolute;top:70px;left:0;right:0;z-index:25;display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:0 1rem}
-.level2-title{font-size:clamp(2.2rem,6.5vw,3rem)!important;font-weight:900!important;color:#16a34a!important;text-shadow:-3px -3px 0 #fff,3px -3px 0 #fff,-3px 3px 0 #fff,3px 3px 0 #fff,0 6px 12px rgba(0,0,0,.2)!important;letter-spacing:.02em;margin-bottom:0!important;display:flex;align-items:center;justify-content:center;gap:.5rem}
+
 .level2-title-icon{font-size:1.15em}
 .level2-subtitle{font-size:clamp(.9rem,2.3vw,1.1rem)!important;font-weight:700!important;color:#14532d!important;background:rgba(255,255,255,.9);padding:.55rem 1.4rem;border-radius:999px;backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(0,0,0,.12);text-align:center}
 .level2-playground{position:absolute;inset:0;width:100%;height:100%;z-index:5}
@@ -166,30 +167,30 @@ img{max-width:100%;display:block}
 .bg-shake-effect{animation:bgShake .5s ease-in-out}
 .sparkle-enhanced{position:absolute;border-radius:50%;pointer-events:none;z-index:15;animation:sparkleEnhanced .7s ease-out forwards}
 @keyframes sparkleEnhanced{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0}}
-.level2-counter{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.94);border-radius:16px;padding:.6rem 1.2rem;box-shadow:0 4px 16px rgba(0,0,0,.15);text-align:center;z-index:30;backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,.6)}
+.level2-counter{position:absolute;top:auto;bottom:18px;left:18px;transform:none;background:rgba(255,255,255,.94);border-radius:16px;padding:.6rem 1.2rem;box-shadow:0 4px 16px rgba(0,0,0,.15);text-align:center;z-index:30;backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,.6)}
 .level2-counter-title{font-size:.8rem;font-weight:800;color:#15803d;margin-bottom:.2rem;display:flex;align-items:center;justify-content:center;gap:.3rem}
 .level2-counter-numbers{font-size:1.6rem;font-weight:900;color:#16a34a;letter-spacing:.05em}
 
 .level4-wrapper{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column}
 .level4-header{position:absolute;top:70px;left:0;right:0;z-index:25;display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:0 1rem}
-.level4-title{font-size:clamp(2.2rem,6.5vw,3rem)!important;font-weight:900!important;color:#16a34a!important;text-shadow:-3px -3px 0 #fff,3px -3px 0 #fff,-3px 3px 0 #fff,3px 3px 0 #fff,0 6px 12px rgba(0,0,0,.2)!important;letter-spacing:.02em;margin-bottom:0!important;display:flex;align-items:center;justify-content:center;gap:.5rem}
+
 .level4-title-icon{font-size:1.15em}
 .level4-subtitle{font-size:clamp(.9rem,2.3vw,1.1rem)!important;font-weight:700!important;color:#14532d!important;background:rgba(255,255,255,.9);padding:.55rem 1.4rem;border-radius:999px;backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(0,0,0,.12);text-align:center}
 .level4-playground{position:absolute;inset:0;width:100%;height:100%;z-index:5}
 .level4-counter{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.94);border-radius:16px;padding:.6rem 1.2rem;box-shadow:0 4px 16px rgba(0,0,0,.15);text-align:center;z-index:30;backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,.6)}
 .level4-counter-title{font-size:.8rem;font-weight:800;color:#15803d;margin-bottom:.2rem;display:flex;align-items:center;justify-content:center;gap:.3rem}
 .level4-counter-numbers{font-size:1.6rem;font-weight:900;color:#16a34a;letter-spacing:.05em}
-.level4-items-bar{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.94);border-radius:20px;padding:1rem 1.5rem;box-shadow:0 6px 24px rgba(0,0,0,.18);z-index:30;backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,.6);display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:.8rem;align-items:center;justify-content:center}
-.level4-item{width:100%;height:75px;background:#fff;border-radius:16px;border:3px solid #86efac;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;cursor:pointer;transition:all .2s ease;box-shadow:0 4px 12px rgba(0,0,0,.1);position:relative;overflow:hidden}
+.level4-items-bar{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.94);border-radius:20px;padding:.8rem 1.2rem;box-shadow:0 6px 24px rgba(0,0,0,.18);z-index:25;backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,.6);display:flex;flex-direction:row;gap:.6rem;overflow-x:auto;overflow-y:hidden;justify-content:center;flex-wrap:nowrap}
+.level4-item{width:75px;height:68px;flex-shrink:0;background:#fff;border-radius:16px;border:3px solid #86efac;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;cursor:pointer;transition:all .2s ease;box-shadow:0 4px 12px rgba(0,0,0,.1);position:relative;overflow:hidden}
 .level4-item::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.4) 0%,transparent 60%);pointer-events:none}
 .level4-item:hover:not(.placed){transform:translateY(-4px) scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,.15)}
 .level4-item:active:not(.placed){transform:translateY(-2px) scale(1.02)}
 .level4-item.placed{opacity:.4;cursor:not-allowed;border-color:#d1d5db}
 .level4-item.wrong{animation:shakeItem .4s ease}
-.level4-item-icon{font-size:2rem;line-height:1}
-.level4-item-label{font-size:.78rem;font-weight:700;color:#166534;text-align:center;line-height:1.2;padding:0 .3rem}
+.level4-item-icon{font-size:1.8rem;line-height:1}
+.level4-item-label{font-size:.7rem;font-weight:700;color:#166534;text-align:center;line-height:1.1;padding:0 .3rem}
 @keyframes shakeItem{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
-.level4-placed-item{position:absolute;z-index:15;pointer-events:none;animation:placeItem .6s ease-out}
+.level4-placed-item{position:absolute;z-index:20;pointer-events:none;animation:placeItem .6s ease-out}
 @keyframes placeItem{0%{transform:scale(0.5);opacity:0}100%{transform:scale(1);opacity:1}}
 .level4-notification{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,.96);border-radius:20px;padding:1.2rem 2rem;box-shadow:0 8px 32px rgba(0,0,0,.25);z-index:40;backdrop-filter:blur(10px);font-size:1.1rem;font-weight:800;text-align:center;display:none;animation:notifPop .5s ease-out}
 @keyframes notifPop{0%{transform:translate(-50%,-50%) scale(.8);opacity:0}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}
@@ -213,15 +214,15 @@ img{max-width:100%;display:block}
 .level4-item-0:hover:not(.placed),.level4-item-1:hover:not(.placed),.level4-item-2:hover:not(.placed),.level4-item-3:hover:not(.placed),.level4-item-4:hover:not(.placed),.level4-item-5:hover:not(.placed){transform:translateY(-4px) scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,.15);filter:brightness(1.05)}
 
 .level3-wrapper{width:100%;max-width:500px;display:flex;flex-direction:column;align-items:center;padding-top:0;justify-content:center;min-height:100vh}
-.level3-title{font-size:clamp(1.9rem,5.5vw,2.4rem)!important;font-weight:900!important;color:#16a34a!important;text-shadow:-3px -3px 0 #fff,3px -3px 0 #fff,-3px 3px 0 #fff,3px 3px 0 #fff,0 6px 12px rgba(0,0,0,.2)!important;letter-spacing:.02em;margin-bottom:.35rem!important;display:flex;align-items:center;justify-content:center;gap:.5rem}
+
 .level3-title-icon{font-size:1.1em}
 .level3-subtitle{font-size:clamp(.8rem,2vw,.92rem)!important;font-weight:600!important;color:#14532d!important;background:rgba(255,255,255,.88);padding:.42rem 1rem;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,.1);margin-bottom:.55rem;text-align:center}
 .level3-card{max-width:540px!important;padding:.65rem 1rem!important;background:rgba(255,255,255,.9)!important}
 .quiz-question-box{border-radius:14px;background:#f0fdf4;border:2px solid #dcfce7;padding:.65rem .75rem;margin-bottom:.55rem;text-align:center}
 .quiz-question-box img{height:80px;margin:0 auto .45rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.15))}
 .quiz-question-box h3{font-size:.94rem;font-weight:800;color:#166534;line-height:1.28}
-.quiz-options-grid{display:flex;flex-direction:column;gap:.38rem}
-.quiz-option{display:flex;align-items:center;width:100%;padding:.65rem .82rem;border-radius:12px;border:2px solid #86efac;background:#f0fdf4;font-weight:700;font-size:.86rem;color:#166534;text-align:left;transition:all .2s ease;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.08);position:relative;overflow:hidden;min-height:48px}
+.quiz-options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.quiz-option{display:flex;align-items:center;justify-content:center;width:100%;padding:.8rem .5rem;border-radius:12px;border:2px solid #86efac;background:#f0fdf4;font-weight:700;font-size:.82rem;color:#166534;text-align:center;transition:all .2s ease;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.08);position:relative;overflow:hidden;min-height:60px}
 .quiz-option::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.4) 0%,transparent 60%);pointer-events:none}
 .quiz-option:hover:not(:disabled){background:#dcfce7;border-color:#22c55e;transform:translateY(-2px) scale(1.02);box-shadow:0 4px 12px rgba(0,0,0,.14)}
 .quiz-option:active:not(:disabled){transform:translateY(0) scale(.98);background:#e5f8ed}
@@ -258,7 +259,7 @@ img{max-width:100%;display:block}
 .learn-organic ul{color:#166534}
 .learn-anorganic ul{color:#1e40af}
 .learn-card ul li{padding:.25rem 0}
-.learn-card p{font-size:.8rem;font-weight:600;margin-top:.8rem;padding-top:.6rem;border-top:1px solid rgba(0,0,0,.08)}
+.learn-card p{font-size:.75rem;font-weight:600;margin-top:.8rem;padding-top:.6rem;border-top:1px solid rgba(0,0,0,.08);line-height:1.4}
 .learn-organic p{color:#15803d}
 .learn-anorganic p{color:#1d4ed8}
 
@@ -304,7 +305,7 @@ img{max-width:100%;display:block}
   .btn{min-height:46px;padding:.75rem 1.2rem}
   .nav-btn{min-height:48px;padding:.55rem .9rem;font-size:.82rem;gap:.4rem}
   .nav-btn-icon{width:20px;height:20px;font-size:.85rem}
-  .subtitle-home{font-size:clamp(.9rem,2.6vw,1.1rem);padding:.55rem 1rem;border-radius:14px;margin-bottom:1.4rem!important;max-width:320px}
+  .subtitle-home{font-size:clamp(.82rem,2.3vw,1rem);padding:.55rem 1.2rem;border-radius:14px;margin-bottom:1.4rem!important;max-width:340px}
   .name-input{width:85%;height:52px;font-size:18px;padding:0 .8rem}
   .story-narration{max-width:310px}
   .subtitle-name{max-width:290px}
@@ -451,6 +452,27 @@ img{max-width:100%;display:block}
   .ending-btn-fixed{bottom:5%;max-width:320px}
 }
 
+/* Mobile Landscape Improvements */
+@media (max-width:768px) and (orientation:landscape){
+  .level1-title,.level2-title,.level3-title,.level4-title{font-size:clamp(1.8rem,5.5vw,2.2rem)!important}
+  .level1-subtitle,.level2-subtitle,.level3-subtitle,.level4-subtitle{font-size:clamp(0.9rem,2.4vw,1.05rem)!important}
+  .btn{min-height:54px;font-size:clamp(1rem,2.8vw,1.15rem);padding:0.9rem 1.6rem}
+  .quiz-option{font-size:0.95rem;min-height:52px;padding:0.8rem 0.7rem}
+  .text-body{font-size:clamp(0.95rem,2.2vw,1.05rem)}
+  .level1-trash-grid .trash-item{min-height:76px;padding:0.8rem 0.7rem;font-size:0.92rem}
+  .level1-drop-grid .drop-zone{min-height:120px;padding:1.2rem}
+  .dirt-spot{padding:8px}
+  .level4-item{height:72px;font-size:0.88rem}
+  .card{padding:1.3rem 1.1rem}
+  .level2-header,.level4-header{top:65px}
+  .level3-card{padding:0.8rem 0.85rem!important}
+  .quiz-options-grid{gap:0.4rem}
+  .level4-items-bar{gap:0.5rem;padding:0.7rem 1rem}
+  .level4-item{width:68px;height:62px}
+  .level4-item-icon{font-size:1.6rem}
+  .level4-item-label{font-size:0.65rem}
+}
+
 </style>
 </head>
 <body>
@@ -481,7 +503,7 @@ img{max-width:100%;display:block}
 <!-- HOME -->
 <section id="screen-home" class="screen active" onclick="ensureMusic()" ontouchstart="ensureMusic()">
   <img src="images/bg-school-main.webp" alt="" class="bg-photo">
-  <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding-bottom:clamp(1.5rem,6vh,3.5rem);z-index:1">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding-bottom:clamp(1.2rem,5.5vh,3.2rem);z-index:1">
     <p class="subtitle-home">Ayo bantu Bimo dan Siti menjaga sekolah supaya bersih dan hijau!</p>
     <div style="display:flex;flex-direction:column;gap:1rem;max-width:280px;width:100%;padding:0 1rem">
       <button class="btn btn-yellow btn-full" style="min-height:58px;font-size:1.15rem" onclick="playClick();goTo('name')">&#9654; Mulai Bermain</button>
@@ -571,7 +593,7 @@ img{max-width:100%;display:block}
   <img src="images/bg-bantu-bimo-siti.webp" alt="" class="bg-photo">
   <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:1.5rem;z-index:1">
   <div class="level1-shell">
-    <div class="mission-badge level1-badge" style="text-align:center;margin-bottom:.5rem;display:inline-block;width:100%">Misi 1 dari 4</div>
+    <div class="mission-badge" style="margin-bottom:.5rem;width:100%">Misi 1 dari 4</div>
     <h2 class="title-main level1-title"><span class="level1-title-icon">&#9851;&#65039;</span><span>Pilah Sampah</span></h2>
     <p class="subtitle level1-subtitle">Seret setiap sampah ke tempat sampah yang sesuai</p>
     <div class="card level1-card">
@@ -600,7 +622,7 @@ img{max-width:100%;display:block}
   <div class="level2-wrapper">
     <div class="level2-header">
       <div style="text-align:center;margin-bottom:.4rem">
-        <span style="background:rgba(255,255,255,.88);border-radius:999px;padding:.3rem .7rem;font-size:.72rem;font-weight:800;color:#15803d;box-shadow:0 2px 8px rgba(0,0,0,.08);display:inline-block">Misi 2 dari 4</span>
+        <span class="mission-badge">Misi 2 dari 4</span>
       </div>
       <h2 class="level2-title"><span class="level2-title-icon">🧹</span><span>Bersihkan Sekolah</span></h2>
       <p class="level2-subtitle">Ketuk semua sampah yang berserakan di halaman sekolah!</p>
@@ -619,7 +641,7 @@ img{max-width:100%;display:block}
   <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:1.5rem;z-index:1">
     <div class="level3-wrapper">
       <div style="text-align:center;margin-bottom:.4rem">
-        <span style="background:rgba(255,255,255,.88);border-radius:999px;padding:.3rem .7rem;font-size:.72rem;font-weight:800;color:#15803d;box-shadow:0 2px 8px rgba(0,0,0,.08);display:inline-block">Misi 3 dari 4</span>
+        <span class="mission-badge">Misi 3 dari 4</span>
       </div>
       <h2 class="level3-title"><span class="level3-title-icon">&#129504;</span><span>Kuis Daur Ulang</span></h2>
       <p class="level3-subtitle">Jawab pertanyaan tentang daur ulang dengan benar!</p>
@@ -649,7 +671,7 @@ img{max-width:100%;display:block}
   <div class="level4-wrapper">
     <div class="level4-header">
       <div style="text-align:center;margin-bottom:.4rem">
-        <span style="background:rgba(255,255,255,.88);border-radius:999px;padding:.3rem .7rem;font-size:.72rem;font-weight:800;color:#15803d;box-shadow:0 2px 8px rgba(0,0,0,.08);display:inline-block">Misi 4 dari 4</span>
+        <span class="mission-badge">Misi 4 dari 4</span>
       </div>
       <h2 class="level4-title"><span class="level4-title-icon">🌱</span><span>Bangun Sekolah Hijau</span></h2>
       <p class="level4-subtitle">Seret atau klik benda yang baik ke halaman sekolah agar sekolah menjadi hijau!</p>
@@ -751,6 +773,7 @@ img{max-width:100%;display:block}
 "use strict";
 
 var state={current:'home',history:[],playerName:'Petualang Hijau',mission:0,l1Score:0,l2Score:0,quizIndex:0,l4Selected:0,soundOn:true,musicStarted:false,quizAnswered:false};
+var confettiInterval=null;
 
 var TRASH_DATA=[
   {name:'Kulit Pisang',type:'organik',img:'images/trash-banana-peel.png'},
@@ -762,9 +785,9 @@ var TRASH_DATA=[
 ];
 
 var QUIZ_DATA=[
-  {img:'images/trash-plastic-bottle.png',q:'Botol Plastik dapat didaur ulang menjadi?',a:['Pot Bunga','Apel','Mobil'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-botol-pot.webp',edukasiText:'Botol plastik bekas dapat didaur ulang menjadi pot bunga.\nMari manfaatkan kembali barang bekas agar lingkungan tetap bersih.'},
-  {img:'images/trash-can.png',q:'Kaleng Bekas dapat didaur ulang menjadi?',a:['Tempat Pensil','Sepatu','Pisang'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-kaleng-pensil.webp',edukasiText:'Kaleng bekas dapat didaur ulang menjadi tempat pensil.\nBarang bekas bisa menjadi benda yang berguna.'},
-  {img:'images/trash-dry-leaf.png',q:'Daun Kering dapat dijadikan?',a:['Kompos','Robot','Gelas'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-daun-kompos.webp',edukasiText:'Daun kering dapat diolah menjadi pupuk kompos.\nKompos membantu tanaman tumbuh lebih subur.'}
+  {img:'images/trash-plastic-bottle.png',q:'Botol Plastik dapat didaur ulang menjadi?',a:['Pot Bunga','Apel','Mobil'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-botol-pot.webp',edukasiText:'Botol plastik bekas dapat didaur ulang menjadi pot bunga.'},
+  {img:'images/trash-can-new.png',q:'Kaleng Bekas dapat didaur ulang menjadi?',a:['Tempat Pensil','Sepatu','Pisang'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-kaleng-pensil.webp',edukasiText:'Kaleng bekas dapat didaur ulang menjadi tempat pensil.'},
+  {img:'images/trash-dry-leaf.png',q:'Daun Kering dapat dijadikan?',a:['Kompos','Robot','Gelas'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-daun-kompos.webp',edukasiText:'Daun kering dapat diolah menjadi pupuk kompos.'}
 ];
 
 var LEVEL4_ITEMS=[
@@ -800,7 +823,7 @@ window.toggleSound=function(){state.soundOn=!state.soundOn;document.getElementBy
 
 var BACK_SCREENS=['guide','name','story','learn','level1','level2','level3','level4','fact','credits','pledge','ending'];
 
-window.goTo=function(id){var prev=state.current;if(prev!==id)state.history.push(prev);state.current=id;document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});var el=document.getElementById('screen-'+id);if(el)el.classList.add('active');document.getElementById('btn-home').style.display=(id==='home')?'none':'flex';document.getElementById('btn-back').style.display=(BACK_SCREENS.indexOf(id)!==-1&&id!=='home')?'flex':'none';updateProgress(id);ensureMusic();var bg=document.getElementById('bg-music');if(id==='level1'){state.mission=1;bg.volume=0.3;initLevel1()}if(id==='level2'){state.mission=2;bg.volume=0.3;initLevel2()}if(id==='level3'){state.mission=3;bg.volume=0.3;initLevel3()}if(id==='level4'){state.mission=4;bg.volume=0.3;initLevel4()}if(id==='ending'){updateEnding();playVictory();spawnConfetti()}};
+window.goTo=function(id){var prev=state.current;if(prev!==id)state.history.push(prev);state.current=id;document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});var el=document.getElementById('screen-'+id);if(el)el.classList.add('active');document.getElementById('btn-home').style.display=(id==='home')?'none':'flex';document.getElementById('btn-back').style.display=(BACK_SCREENS.indexOf(id)!==-1&&id!=='home')?'flex':'none';updateProgress(id);ensureMusic();var bg=document.getElementById('bg-music');if(prev==='ending'&&id!=='ending'){stopConfetti()}if(id==='level1'){state.mission=1;bg.volume=0.3;initLevel1()}if(id==='level2'){state.mission=2;bg.volume=0.3;initLevel2()}if(id==='level3'){state.mission=3;bg.volume=0.3;initLevel3()}if(id==='level4'){state.mission=4;bg.volume=0.3;initLevel4()}if(id==='ending'){updateEnding();playVictory();startContinuousConfetti()}};
 
 window.goBack=function(){playClick();if(state.history.length>0){var prev=state.history.pop();state.current=prev;document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});var el=document.getElementById('screen-'+prev);if(el)el.classList.add('active');document.getElementById('btn-home').style.display=(prev==='home')?'none':'flex';document.getElementById('btn-back').style.display=(BACK_SCREENS.indexOf(prev)!==-1&&prev!=='home')?'flex':'none';updateProgress(prev)}else{goTo('home')}};
 
@@ -818,13 +841,17 @@ function showFact(idx,nextCb){document.getElementById('fact-message').textConten
 
 function spawnConfetti(){var colors=['#fde047','#22c55e','#38bdf8','#f472b6','#fb923c','#a78bfa'];for(var i=0;i<40;i++){(function(delay){setTimeout(function(){var c=document.createElement('div');c.className='confetti-piece';c.style.left=(Math.random()*100)+'%';c.style.top='-10px';c.style.background=colors[Math.floor(Math.random()*colors.length)];c.style.width=(6+Math.random()*8)+'px';c.style.height=(6+Math.random()*8)+'px';c.style.animationDuration=(2+Math.random()*2)+'s';document.body.appendChild(c);setTimeout(function(){c.remove()},4500)},delay)})(i*60)}}
 
+function startContinuousConfetti(){if(confettiInterval)clearInterval(confettiInterval);spawnConfetti();confettiInterval=setInterval(function(){spawnConfetti()},3000)}
+
+function stopConfetti(){if(confettiInterval){clearInterval(confettiInterval);confettiInterval=null}}
+
 function initLevel1(){state.l1Score=0;var wrap=document.getElementById('trash-items');wrap.innerHTML='';document.getElementById('l1-feedback').textContent='';document.getElementById('l1-feedback').className='feedback';TRASH_DATA.forEach(function(t,idx){var el=document.createElement('div');el.className='trash-item trash-item-'+idx;el.draggable=true;el.dataset.type=t.type;el.dataset.name=t.name;el.innerHTML='<img src="'+t.img+'" class="trash-icon" alt=""> '+t.name;el.ondragstart=function(e){draggedEl=el;e.dataTransfer.effectAllowed='move';setTimeout(function(){el.style.opacity='.5'},0)};el.ondragend=function(){el.style.opacity='1';draggedEl=null};enableTouchDrag(el);wrap.appendChild(el)})}
 
 window.onDragOver=function(e){e.preventDefault();e.currentTarget.classList.add('over')};
 window.onDragLeave=function(e){e.currentTarget.classList.remove('over')};
 window.onDrop=function(e,bin){e.preventDefault();e.currentTarget.classList.remove('over');if(!draggedEl)return;resolveDrop(draggedEl,bin)};
 
-function enableTouchDrag(el){el.addEventListener('touchstart',function(){draggedEl=el;el.style.opacity='.5'},{passive:true});el.addEventListener('touchend',function(e){el.style.opacity='1';var t=e.changedTouches[0];var target=document.elementFromPoint(t.clientX,t.clientY);var bin=target?target.closest('.drop-zone'):null;if(bin&&draggedEl){var isOrg=bin.classList.contains('drop-zone-organic');resolveDrop(draggedEl,isOrg?'organik':'anorganik')}draggedEl=null})}
+function enableTouchDrag(el){el.addEventListener('touchstart',function(e){draggedEl=el;el.style.opacity='.5'},{passive:false});el.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});el.addEventListener('touchend',function(e){el.style.opacity='1';var t=e.changedTouches[0];var target=document.elementFromPoint(t.clientX,t.clientY);var bin=target?target.closest('.drop-zone'):null;if(bin&&draggedEl){var isOrg=bin.classList.contains('drop-zone-organic');resolveDrop(draggedEl,isOrg?'organik':'anorganik')}draggedEl=null},{passive:false})}
 
 function resolveDrop(el,bin){var type=el.dataset.type;var name=el.dataset.name;var fb=document.getElementById('l1-feedback');if(type===bin){el.style.display='none';state.l1Score++;pauseMusicForSfx('aud-correct');fb.className='feedback feedback-correct';fb.textContent='\u2705 Benar! ('+state.l1Score+'/6)';if(state.l1Score===6){setTimeout(function(){showModal('','Kamu mendapat lencana karena berhasil memilah sampah.','Pemilah Hebat',function(){showFact(0,function(){goTo('level2')})},'assets/badges/badge-pemilah-hebat.webp')},700)}}else{pauseMusicForSfx('aud-wrong');fb.className='feedback feedback-wrong';fb.textContent=WRONG_MSG[name]||'Yuk coba lagi.';el.classList.add('anim-shake');setTimeout(function(){el.classList.remove('anim-shake')},500)}draggedEl=null}
 
@@ -838,7 +865,7 @@ function initLevel3(){state.quizIndex=0;state.quizAnswered=false;renderQuiz()}
 
 function renderQuiz(){var q=QUIZ_DATA[state.quizIndex];document.getElementById('quiz-progress').textContent='Soal '+(state.quizIndex+1)+' dari 3';document.getElementById('quiz-img').src=q.img;document.getElementById('quiz-question').textContent=q.q;var fb=document.getElementById('quiz-feedback');fb.innerHTML='';fb.className='quiz-feedback-box';state.quizAnswered=false;var nextBtn=document.getElementById('quiz-next-btn');nextBtn.style.display='none';nextBtn.onclick=null;var wrap=document.getElementById('quiz-options');wrap.innerHTML='';q.a.forEach(function(answer,idx){var btn=document.createElement('button');btn.type='button';btn.className='quiz-option';btn.textContent=String.fromCharCode(65+idx)+'. '+answer;btn.onclick=function(){answerQuiz(idx,btn)};wrap.appendChild(btn)})}
 
-function answerQuiz(sel,selBtn){if(state.quizAnswered)return;state.quizAnswered=true;var q=QUIZ_DATA[state.quizIndex];var all=document.querySelectorAll('.quiz-option');var fb=document.getElementById('quiz-feedback');var nextBtn=document.getElementById('quiz-next-btn');if(sel===q.c){all.forEach(function(b){b.disabled=true});selBtn.classList.add('correct');pauseMusicForSfx('aud-correct');showQuizNotification('\u2705 Hebat! Jawabanmu benar!','success',3000);setTimeout(function(){nextBtn.textContent='Lanjut \u27A1';nextBtn.style.display='flex';nextBtn.onclick=function(){playClick();showEdukasiModal(q.edukasiImg,q.edukasiText,function(){if(state.quizIndex<QUIZ_DATA.length-1){state.quizIndex++;renderQuiz()}else{showModal('','Kamu mendapat lencana karena berhasil menjawab kuis daur ulang.','Ahli Daur Ulang',function(){showFact(2,function(){goTo('level4')})},'assets/badges/badge-ahli-daur-ulang.webp')}})}},3000)}else{all.forEach(function(b,idx){if(idx!==q.c){b.classList.add('wrong')}else{b.classList.add('correct')}});pauseMusicForSfx('aud-wrong');showQuizNotification('\u274C Coba lagi ya!','error',2000);setTimeout(function(){nextBtn.textContent='Coba Lagi';nextBtn.style.display='flex';nextBtn.onclick=function(){playClick();state.quizAnswered=false;all.forEach(function(b){b.disabled=false;b.classList.remove('correct','wrong')});fb.innerHTML='';fb.className='quiz-feedback-box';nextBtn.style.display='none'}},2000)}}
+function answerQuiz(sel,selBtn){if(state.quizAnswered)return;state.quizAnswered=true;var q=QUIZ_DATA[state.quizIndex];var all=document.querySelectorAll('.quiz-option');var fb=document.getElementById('quiz-feedback');var nextBtn=document.getElementById('quiz-next-btn');if(sel===q.c){all.forEach(function(b){b.disabled=true});selBtn.classList.add('correct');pauseMusicForSfx('aud-correct');showQuizNotification('\u2705 Hebat! Jawabanmu benar!','success',1200);setTimeout(function(){nextBtn.textContent='Lanjut \u27A1';nextBtn.style.display='flex';nextBtn.onclick=function(){playClick();showEdukasiModal(q.edukasiImg,q.edukasiText,function(){if(state.quizIndex<QUIZ_DATA.length-1){state.quizIndex++;renderQuiz()}else{showModal('','Kamu mendapat lencana karena berhasil menjawab kuis daur ulang.','Ahli Daur Ulang',function(){showFact(2,function(){goTo('level4')})},'assets/badges/badge-ahli-daur-ulang.webp')}})}},1200)}else{all.forEach(function(b,idx){if(idx!==q.c){b.classList.add('wrong')}else{b.classList.add('correct')}});pauseMusicForSfx('aud-wrong');showQuizNotification('\u274C Coba lagi ya!','error',800);setTimeout(function(){nextBtn.textContent='Coba Lagi';nextBtn.style.display='flex';nextBtn.onclick=function(){playClick();state.quizAnswered=false;all.forEach(function(b){b.disabled=false;b.classList.remove('correct','wrong')});fb.innerHTML='';fb.className='quiz-feedback-box';nextBtn.style.display='none'}},800)}}
 
 function initLevel4(){state.l4Selected=0;state.l4Placed=[];var itemsWrap=document.getElementById('l4-items');itemsWrap.innerHTML='';var area=document.getElementById('level4-area');area.querySelectorAll('.level4-placed-item').forEach(function(el){el.remove()});var shuffled=LEVEL4_ITEMS.slice();for(var i=shuffled.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var temp=shuffled[i];shuffled[i]=shuffled[j];shuffled[j]=temp}shuffled.forEach(function(item,idx){var div=document.createElement('div');div.className='level4-item level4-item-'+idx;div.dataset.id=item.id;div.dataset.correct=item.correct;div.innerHTML='<div class="level4-item-icon">'+item.emoji+'</div><div class="level4-item-label">'+item.label+'</div>';div.onclick=function(){handleItemClick(item,div)};itemsWrap.appendChild(div)});updateL4Score()}
 
