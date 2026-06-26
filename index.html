@@ -95,7 +95,7 @@ img{max-width:100%;display:block}
 .edukasi-modal-title{font-size:2rem;font-weight:900;color:#15803d;margin-bottom:.8rem;letter-spacing:.02em}
 .edukasi-modal-img{width:300px;height:300px;margin:0 auto 1rem;object-fit:cover;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.15)}
 .edukasi-modal-text{font-size:1rem;font-weight:600;color:#166534;line-height:1.6;margin-bottom:1.2rem;padding:0 .5rem;white-space:pre-line}
-.modal-close-btn{position:absolute;top:1rem;right:1rem;background:rgba(239,68,68,.1);border:2px solid #ef4444;color:#dc2626;width:36px;height:36px;border-radius:50%;font-size:1.2rem;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;padding:0;line-height:1}
+.modal-close-btn{position:absolute;top:1rem;right:1rem;background:rgba(239,68,68,.1);border:2px solid #ef4444;color:#dc2626;width:36px;height:36px;border-radius:50%;font-size:1.2rem;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;padding:0;line-height:1;z-index:100}
 .modal-close-btn:hover{background:#fecaca;transform:scale(1.1)}
 
 .confetti-piece{position:fixed;width:10px;height:10px;border-radius:2px;z-index:200;animation:confetti-fall 2.5s linear forwards;pointer-events:none}
@@ -211,7 +211,7 @@ img{max-width:100%;display:block}
 
 .level3-title-icon{font-size:1.1em}
 .level3-subtitle{font-size:clamp(.95rem,2.5vw,1.12rem)!important;font-weight:600!important;color:#14532d!important;text-shadow:0 1px 3px rgba(255,255,255,.8)!important;background:rgba(255,255,255,.78);display:inline-block;padding:.6rem 1.5rem;border-radius:999px;margin:0 auto .55rem!important;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,.08);text-align:center}
-.level3-card{max-width:540px!important;padding:.65rem 1rem!important;background:rgba(255,255,255,.9)!important}
+.level3-card{max-width:640px!important;padding:.65rem 1rem!important;background:rgba(255,255,255,.9)!important}
 .quiz-question-box{border-radius:14px;background:#f0fdf4;border:2px solid #dcfce7;padding:.65rem .75rem;margin-bottom:.55rem;text-align:center}
 .quiz-question-box img{height:80px;margin:0 auto .45rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.15))}
 .quiz-question-box h3{font-size:.94rem;font-weight:800;color:#166534;line-height:1.28}
@@ -265,7 +265,7 @@ img{max-width:100%;display:block}
 .ending-content-overlay{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10}
 .cert-name-overlay{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);text-align:center;font-weight:900;font-size:clamp(2.4rem,6vw,4rem);letter-spacing:.03em;width:70%;line-height:1.2;z-index:10;opacity:0;animation:nameAppear .4s ease-out .5s forwards;background:linear-gradient(135deg,#16a34a 0%,#22c55e 50%,#4ade80 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(2px 2px 0 rgba(255,255,255,.3)) drop-shadow(-2px -2px 0 rgba(255,255,255,.3)) drop-shadow(2px -2px 0 rgba(255,255,255,.3)) drop-shadow(-2px 2px 0 rgba(255,255,255,.3))}
 @keyframes nameAppear{0%{opacity:0;transform:translate(-50%,-50%) scale(.95)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
-.ending-badges-float{position:absolute;bottom:calc(15% - 30px);left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.ending-badges-float{position:absolute;bottom:calc(15% - 40px);left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .ending-badge-item{width:175px;height:175px;animation:badgePopGlow .6s ease-out backwards;filter:drop-shadow(0 4px 8px rgba(0,0,0,.25))}
 .ending-badge-item:nth-child(1){animation-delay:1.2s}
 .ending-badge-item:nth-child(2){animation-delay:1.4s}
@@ -317,7 +317,7 @@ img{max-width:100%;display:block}
   .level2-counter-title{font-size:.72rem}
   .level2-counter-numbers{font-size:1.3rem}
   .level3-wrapper{max-width:360px;padding-top:65px}
-  .level3-card{max-width:360px!important;padding:.65rem .7rem!important}
+  .level3-card{max-width:420px!important;padding:.65rem .7rem!important}
   .quiz-question-box{padding:.7rem .7rem;margin-bottom:.6rem}
   .quiz-question-box img{height:75px;margin-bottom:.45rem}
   .quiz-question-box h3{font-size:.88rem;line-height:1.25}
@@ -343,7 +343,7 @@ img{max-width:100%;display:block}
   .modal-badge-img{width:220px;height:220px;margin:0 auto .9rem}
   .modal-badge-name{font-size:1.15rem;margin-top:-.8rem;margin-bottom:1rem}
   .cert-name-overlay{top:47%;font-size:clamp(1.8rem,5vw,2.8rem);width:72%}
-  .ending-badges-float{bottom:calc(12% - 30px)}
+  .ending-badges-float{bottom:calc(12% - 40px)}
   .ending-badge-item{width:120px;height:120px}
   .ending-btn-fixed{bottom:4%;max-width:240px}
 }
@@ -354,7 +354,7 @@ img{max-width:100%;display:block}
   .char-img-sm{height:68px}
   .level2-header{top:90px}
   .level3-wrapper{max-width:440px;padding-top:88px}
-  .level3-card{max-width:440px!important;padding:.85rem .85rem!important}
+  .level3-card{max-width:520px!important;padding:.85rem .85rem!important}
   .quiz-question-box{padding:.8rem;margin-bottom:.7rem}
   .quiz-question-box img{height:100px;margin-bottom:.55rem}
   .quiz-question-box h3{font-size:1rem}
@@ -407,7 +407,7 @@ img{max-width:100%;display:block}
   .modal-badge-img{width:260px;height:260px}
   .modal-badge-name{font-size:1.3rem;margin-bottom:1.6rem}
   .cert-name-overlay{top:47%;font-size:clamp(2.2rem,5.5vw,3.2rem)}
-  .ending-badges-float{bottom:calc(14% - 30px)}
+  .ending-badges-float{bottom:calc(14% - 40px)}
   .ending-badge-item{width:150px;height:150px}
   .ending-btn-fixed{bottom:4.5%}
 }
@@ -441,7 +441,7 @@ img{max-width:100%;display:block}
   .modal-badge-img{width:340px;height:340px;margin-bottom:1.2rem}
   .modal-badge-name{font-size:1.5rem;margin-top:-.8rem;margin-bottom:1.5rem}
   .cert-name-overlay{top:47%;font-size:clamp(3rem,7vw,5rem);width:65%}
-  .ending-badges-float{bottom:calc(16% - 30px);gap:1.5rem}
+  .ending-badges-float{bottom:calc(16% - 40px);gap:1.5rem}
   .ending-badge-item{width:200px;height:200px}
   .ending-btn-fixed{bottom:5%;max-width:320px}
 }
@@ -847,9 +847,9 @@ window.submitName=function(e){e.preventDefault();playClick();var input=document.
 
 function showModal(title,msg,badgeName,nextCb,badgeImg){playBadge();document.getElementById('modal-message').textContent=msg;document.getElementById('modal-badge-name').textContent=badgeName;var imgEl=document.getElementById('modal-badge-img');imgEl.src=badgeImg;imgEl.style.display='block';document.getElementById('modal-success').classList.add('show');document.getElementById('modal-next-btn').onclick=function(){playClick();document.getElementById('modal-success').classList.remove('show');nextCb()}}
 
-function showEdukasiModal(edukasiImg,edukasiText,nextCb){document.getElementById('edukasi-img').src=edukasiImg;document.getElementById('edukasi-text').textContent=edukasiText;document.getElementById('edukasi-modal').classList.add('show');document.getElementById('edukasi-next-btn').onclick=function(){playClick();document.getElementById('edukasi-modal').classList.remove('show');nextCb()}}
+function showEdukasiModal(edukasiImg,edukasiText,nextCb){window.edukasiNextCallback=nextCb;document.getElementById('edukasi-img').src=edukasiImg;document.getElementById('edukasi-text').textContent=edukasiText;document.getElementById('edukasi-modal').classList.add('show');document.getElementById('edukasi-next-btn').onclick=function(){playClick();document.getElementById('edukasi-modal').classList.remove('show');if(nextCb)nextCb()}}
 
-function closeEdukasiModal(){playClick();document.getElementById('edukasi-modal').classList.remove('show')}
+function closeEdukasiModal(){playClick();document.getElementById('edukasi-modal').classList.remove('show');if(window.edukasiNextCallback){window.edukasiNextCallback()}}
 
 function showQuizNotification(msg,type,duration){var notif=document.getElementById('quiz-notification');notif.textContent=msg;notif.className='quiz-notification '+type+' show';setTimeout(function(){notif.classList.remove('show')},duration)}
 
@@ -869,11 +869,11 @@ window.onDrop=function(e,bin){e.preventDefault();e.currentTarget.classList.remov
 
 function enableTouchDrag(el){el.addEventListener('touchstart',function(e){draggedEl=el;el.style.opacity='.5'},{passive:false});el.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});el.addEventListener('touchend',function(e){el.style.opacity='1';var t=e.changedTouches[0];var target=document.elementFromPoint(t.clientX,t.clientY);var bin=target?target.closest('.drop-zone'):null;if(bin&&draggedEl){var isOrg=bin.classList.contains('drop-zone-organic');resolveDrop(draggedEl,isOrg?'organik':'anorganik')}draggedEl=null},{passive:false})}
 
-function resolveDrop(el,bin){var type=el.dataset.type;var name=el.dataset.name;var fb=document.getElementById('l1-feedback');if(type===bin){el.style.display='none';state.l1Score++;pauseMusicForSfx('aud-correct');fb.className='feedback feedback-correct';fb.textContent='\u2705 Benar! ('+state.l1Score+'/6)';if(state.l1Score===6){setTimeout(function(){showModal('','Kamu mendapat lencana karena berhasil memilah sampah.','Pemilah Hebat',function(){showFact(0,function(){goTo('level2')})},'assets/badges/badge-pemilah-hebat.webp')},700)}}else{pauseMusicForSfx('aud-wrong');fb.className='feedback feedback-wrong';fb.textContent=WRONG_MSG[name]||'Yuk coba lagi.';el.classList.add('anim-shake');setTimeout(function(){el.classList.remove('anim-shake')},500)}draggedEl=null}
+function resolveDrop(el,bin){var type=el.dataset.type;var name=el.dataset.name;var fb=document.getElementById('l1-feedback');if(type===bin){el.style.display='none';state.l1Score++;pauseMusicForSfx('aud-correct');fb.className='feedback feedback-correct';fb.textContent='\u2705 Benar! ('+state.l1Score+'/6)';if(state.l1Score===6){setTimeout(function(){showModal('','Kamu mendapat lencana karena berhasil memilah sampah.','Pemilah Hebat',function(){updateMissionDots(1);showFact(0,function(){goTo('level2')})},'assets/badges/badge-pemilah-hebat.webp')},700)}}else{pauseMusicForSfx('aud-wrong');fb.className='feedback feedback-wrong';fb.textContent=WRONG_MSG[name]||'Yuk coba lagi.';el.classList.add('anim-shake');setTimeout(function(){el.classList.remove('anim-shake')},500)}draggedEl=null}
 
 function initLevel2(){state.l2Score=0;var area=document.getElementById('school-area');area.querySelectorAll('.dirt-spot').forEach(function(el){el.remove()});var trashData=[{icon:'images/trash-dry-leaf.png',size:110,left:'21.5%',top:'56%',name:'Daun Kering'},{icon:'images/trash-banana-peel.png',size:63,left:'68%',top:'62%',name:'Kulit Pisang'},{icon:'images/trash-candy-wrapper.png',size:75,left:'38%',top:'48%',name:'Bungkus Permen'},{icon:'images/trash-drink-box.png',size:110,left:'55%',top:'68%',name:'Kotak Minuman'},{icon:'images/trash-plastic-bag.png',size:110,left:'26%',top:'70%',name:'Kantong Plastik'},{icon:'images/trash-plastic-cup.png',size:110,left:'48%',top:'52%',name:'Gelas Plastik'},{icon:'images/trash-tissue.png',size:110,left:'43%',top:'60%',name:'Tisu'},{icon:'images/crumpled_snack_wrapper-removebg-preview.png',size:110,left:'62%',top:'48%',name:'Bungkus Snack'}];for(var i=0;i<8;i++){var trash=trashData[i];var d=document.createElement('button');d.type='button';d.className='dirt-spot trash-float-anim';d.style.left=trash.left;d.style.top=trash.top;d.style.animationDelay=(i*0.3)+'s';var img=document.createElement('img');img.src=trash.icon;img.style.width=trash.size+'px';img.style.height=trash.size+'px';img.alt='';d.appendChild(img);d.onclick=function(){var self=this;var rect=self.getBoundingClientRect();spawnSparkles(rect.left+rect.width/2,rect.top+rect.height/2);pauseMusicForSfx('aud-correct');self.classList.add('clicked');setTimeout(function(){self.remove()},400);state.l2Score++;updateL2()};area.appendChild(d)}updateL2()}
 
-function updateL2(){var el=document.getElementById('l2-score');if(state.l2Score>=8){el.innerHTML='<span style="font-size:2.2rem">\u{1F389}</span><br><span style="font-size:1.3rem;color:#16a34a">Sekolah Bersih!</span>';setTimeout(function(){showModal('','Kamu mendapat lencana karena berhasil membersihkan halaman sekolah.','Penjaga Kebersihan',function(){showFact(1,function(){goTo('level3')})},'assets/badges/badge-penjaga-kebersihan.webp')},500)}else{el.textContent=state.l2Score+' / 8'}}
+function updateL2(){var el=document.getElementById('l2-score');if(state.l2Score>=8){el.innerHTML='<span style="font-size:2.2rem">\u{1F389}</span><br><span style="font-size:1.3rem;color:#16a34a">Sekolah Bersih!</span>';setTimeout(function(){showModal('','Kamu mendapat lencana karena berhasil membersihkan halaman sekolah.','Penjaga Kebersihan',function(){updateMissionDots(2);showFact(1,function(){goTo('level3')})},'assets/badges/badge-penjaga-kebersihan.webp')},500)}else{el.textContent=state.l2Score+' / 8'}}
 
 function spawnSparkles(x,y){var colors=['#fde047','#facc15','#22c55e','#10b981','#38bdf8','#f472b6'];for(var i=0;i<15;i++){var sparkle=document.createElement('div');sparkle.className='sparkle-enhanced';var size=6+Math.random()*10;sparkle.style.width=size+'px';sparkle.style.height=size+'px';sparkle.style.left=x+'px';sparkle.style.top=y+'px';sparkle.style.background=colors[Math.floor(Math.random()*colors.length)];sparkle.style.boxShadow='0 0 '+(8+size)+'px rgba(253,224,71,.9)';var angle=Math.random()*Math.PI*2;var distance=40+Math.random()*40;sparkle.style.setProperty('--tx',(Math.cos(angle)*distance)+'px');sparkle.style.setProperty('--ty',(Math.sin(angle)*distance)+'px');document.body.appendChild(sparkle);setTimeout(function(s){return function(){s.remove()}}(sparkle),700)}}
 
@@ -881,7 +881,7 @@ function initLevel3(){state.quizIndex=0;state.quizAnswered=false;renderQuiz()}
 
 function renderQuiz(){var q=QUIZ_DATA[state.quizIndex];document.getElementById('quiz-progress').textContent='Soal '+(state.quizIndex+1)+' dari 3';document.getElementById('quiz-img').src=q.img;document.getElementById('quiz-question').textContent=q.q;var fb=document.getElementById('quiz-feedback');fb.innerHTML='';fb.className='quiz-feedback-box';state.quizAnswered=false;var nextBtn=document.getElementById('quiz-next-btn');nextBtn.style.display='none';nextBtn.onclick=null;var correctAnswer=q.a[q.c];var shuffledAnswers=q.a.slice();for(var i=shuffledAnswers.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var temp=shuffledAnswers[i];shuffledAnswers[i]=shuffledAnswers[j];shuffledAnswers[j]=temp}var newCorrectIndex=shuffledAnswers.indexOf(correctAnswer);var wrap=document.getElementById('quiz-options');wrap.innerHTML='';shuffledAnswers.forEach(function(answer,idx){var btn=document.createElement('button');btn.type='button';btn.className='quiz-option';btn.textContent=String.fromCharCode(65+idx)+'. '+answer;btn.onclick=function(){answerQuiz(idx,btn,newCorrectIndex)};wrap.appendChild(btn)})}
 
-function answerQuiz(sel,selBtn,correctIndex){if(state.quizAnswered)return;state.quizAnswered=true;var q=QUIZ_DATA[state.quizIndex];var all=document.querySelectorAll('.quiz-option');var fb=document.getElementById('quiz-feedback');var nextBtn=document.getElementById('quiz-next-btn');if(sel===correctIndex){all.forEach(function(b){b.disabled=true});selBtn.classList.add('correct');pauseMusicForSfx('aud-correct');showQuizNotification('\u2705 Selamat! Jawabanmu benar!','success',1400);setTimeout(function(){showEdukasiModal(q.edukasiImg,q.edukasiText,function(){if(state.quizIndex<QUIZ_DATA.length-1){state.quizIndex++;renderQuiz()}else{showModal('','Kamu mendapat lencana karena berhasil menjawab kuis daur ulang.','Ahli Daur Ulang',function(){showFact(2,function(){goTo('level4')})},'assets/badges/badge-ahli-daur-ulang.webp')}})},1400)}else{all.forEach(function(b,idx){if(idx!==correctIndex){b.classList.add('wrong')}else{b.classList.add('correct')}});pauseMusicForSfx('aud-wrong');showQuizNotification('\u274C Coba lagi ya!','error',800);setTimeout(function(){nextBtn.textContent='Coba Lagi';nextBtn.style.display='flex';nextBtn.onclick=function(){playClick();state.quizAnswered=false;all.forEach(function(b){b.disabled=false;b.classList.remove('correct','wrong')});fb.innerHTML='';fb.className='quiz-feedback-box';nextBtn.style.display='none'}},800)}}
+function answerQuiz(sel,selBtn,correctIndex){if(state.quizAnswered)return;state.quizAnswered=true;var q=QUIZ_DATA[state.quizIndex];var all=document.querySelectorAll('.quiz-option');var fb=document.getElementById('quiz-feedback');var nextBtn=document.getElementById('quiz-next-btn');if(sel===correctIndex){all.forEach(function(b){b.disabled=true});selBtn.classList.add('correct');pauseMusicForSfx('aud-correct');showQuizNotification('\u2705 Selamat! Jawabanmu benar!','success',1400);setTimeout(function(){showEdukasiModal(q.edukasiImg,q.edukasiText,function(){if(state.quizIndex<QUIZ_DATA.length-1){state.quizIndex++;renderQuiz()}else{showModal('','Kamu mendapat lencana karena berhasil menjawab kuis daur ulang.','Ahli Daur Ulang',function(){updateMissionDots(3);showFact(2,function(){goTo('level4')})},'assets/badges/badge-ahli-daur-ulang.webp')}})},1400)}else{all.forEach(function(b,idx){if(idx!==correctIndex){b.classList.add('wrong')}else{b.classList.add('correct')}});pauseMusicForSfx('aud-wrong');showQuizNotification('\u274C Coba lagi ya!','error',800);setTimeout(function(){nextBtn.textContent='Coba Lagi';nextBtn.style.display='flex';nextBtn.onclick=function(){playClick();state.quizAnswered=false;all.forEach(function(b){b.disabled=false;b.classList.remove('correct','wrong')});fb.innerHTML='';fb.className='quiz-feedback-box';nextBtn.style.display='none'}},800)}}
 
 function initLevel4(){state.l4Selected=0;state.l4Placed=[];var itemsWrap=document.getElementById('l4-items');itemsWrap.innerHTML='';var area=document.getElementById('level4-area');area.querySelectorAll('.level4-placed-item').forEach(function(el){el.remove()});var shuffled=LEVEL4_ITEMS.slice();for(var i=shuffled.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var temp=shuffled[i];shuffled[i]=shuffled[j];shuffled[j]=temp}var colors=[0,1,2,3,4,5];for(var i=colors.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var temp=colors[i];colors[i]=colors[j];colors[j]=temp}shuffled.forEach(function(item,idx){var div=document.createElement('div');var colorIdx=colors[idx];div.className='level4-item level4-item-'+colorIdx;div.dataset.id=item.id;div.dataset.correct=item.correct;div.innerHTML='<div class="level4-item-icon">'+item.emoji+'</div><div class="level4-item-label">'+item.label+'</div>';div.onclick=function(){handleItemClick(item,div)};itemsWrap.appendChild(div)});updateL4Score()}
 
@@ -901,7 +901,7 @@ function fadeInMusic(){var bg=document.getElementById('bg-music');if(!state.soun
 
 function playApplause(){if(!state.soundOn)return;var aud=document.getElementById('aud-applause');if(!aud)return;try{aud.currentTime=0;aud.play().catch(function(){})}catch(e){}}
 
-window.resetGame=function(){stopConfetti();document.querySelectorAll('.confetti-piece').forEach(function(c){c.remove()});state.current='home';state.history=[];state.playerName='Petualang Hijau';state.mission=0;state.l1Score=0;state.l2Score=0;state.quizIndex=0;state.l4Selected=0;state.quizAnswered=false;document.getElementById('player-name').value='';document.getElementById('name-error').textContent='';document.getElementById('progress-bar').style.width='0%'};
+window.resetGame=function(){stopConfetti();document.querySelectorAll('.confetti-piece').forEach(function(c){c.remove()});state.current='home';state.history=[];state.playerName='Petualang Hijau';state.mission=0;state.l1Score=0;state.l2Score=0;state.quizIndex=0;state.l4Selected=0;state.quizAnswered=false;document.getElementById('player-name').value='';document.getElementById('name-error').textContent='';document.getElementById('progress-bar').style.width='0%';updateMissionDots(-1)};
 
 document.getElementById('btn-home').style.display='none';
 document.getElementById('btn-back').style.display='none';
