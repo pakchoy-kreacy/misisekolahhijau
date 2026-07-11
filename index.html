@@ -367,6 +367,7 @@ img{max-width:100%;display:block}
   .level4-item-icon{font-size:1.8rem}
   .level4-item-label{font-size:.7rem;line-height:1.15;padding:0 .2rem}
   .level4-placed-item div{font-size:2.5rem!important}
+  .trash-item.selected{outline:3px solid #fde047;outline-offset:2px;box-shadow:0 0 0 4px rgba(253,224,71,.4),0 4px 12px rgba(0,0,0,.15)!important;transform:scale(1.05)!important;background:#fefce8!important}
   .level4-notification{padding:1rem 1.5rem;font-size:.95rem}
 
   .modal-card{max-width:88%;padding:.95rem .85rem}
@@ -479,6 +480,15 @@ img{max-width:100%;display:block}
   .ending-badges-float{grid-template-columns:repeat(4,78px)!important}
 }
 
+/* Rotate overlay for portrait mode */
+.rotate-overlay{position:fixed;inset:0;z-index:999;background:linear-gradient(135deg,#14532d,#166534,#15803d);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;opacity:0;pointer-events:none;transition:opacity .4s ease;font-family:'Nunito',sans-serif}
+.rotate-overlay.show{opacity:1;pointer-events:auto}
+.rotate-icon{font-size:clamp(3.5rem,10vw,5rem);animation:rotatePhone 2s ease-in-out infinite}
+@keyframes rotatePhone{0%,100%{transform:rotate(0deg)}50%{transform:rotate(90deg)}}
+.rotate-title{font-size:clamp(1.5rem,5vw,2rem);font-weight:900;color:#fff;text-align:center;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.rotate-text{font-size:clamp(.9rem,2.5vw,1.05rem);font-weight:600;color:rgba(255,255,255,.88);text-align:center;max-width:300px;line-height:1.5;padding:0 1.5rem}
+
+
 
 
 
@@ -506,10 +516,6 @@ img{max-width:100%;display:block}
   </button>
   <div></div>
   <div style="display:flex;gap:.6rem;align-items:center">
-    <button class="nav-btn" id="btn-back" onclick="goBack()" style="display:none">
-      <span class="nav-btn-icon nav-btn-icon-back"><i data-lucide="arrow-left"></i></span>
-      <span class="nav-btn-text">Kembali</span>
-    </button>
     <button class="nav-btn" id="btn-sound" onclick="toggleSound()">
       <span class="nav-btn-icon nav-btn-icon-sound" id="sound-icon-inner"><i data-lucide="volume-2"></i></span>
       <span class="nav-btn-text" id="sound-badge">Musik ON</span>
@@ -517,6 +523,10 @@ img{max-width:100%;display:block}
     <button class="nav-btn" id="btn-pause" onclick="togglePause()" style="display:none">
       <span class="nav-btn-icon nav-btn-icon-pause"><i data-lucide="pause"></i></span>
       <span class="nav-btn-text">Jeda</span>
+    </button>
+    <button class="nav-btn" id="btn-back" onclick="goBack()" style="display:none">
+      <span class="nav-btn-icon nav-btn-icon-back"><i data-lucide="arrow-left"></i></span>
+      <span class="nav-btn-text">Kembali</span>
     </button>
   </div>
 </div>
@@ -838,6 +848,12 @@ img{max-width:100%;display:block}
 
 </div>
 
+<div id="rotate-overlay" class="rotate-overlay">
+  <div class="rotate-icon">📱</div>
+  <div class="rotate-title">Putar HP Kamu</div>
+  <div class="rotate-text">Game ini lebih seru dimainkan dalam mode landscape. Putar HP kamu secara horizontal!</div>
+</div>
+
 <audio id="bg-music" src="audio/sfx-main.mp3" loop preload="auto" muted></audio>
 <audio id="aud-click" src="audio/sfx-click.mp3" preload="auto"></audio>
 <audio id="aud-correct" src="audio/sfx-correct.mp3" preload="auto"></audio>
@@ -897,6 +913,7 @@ var WRONG_MSG={'Kulit Pisang':'Yuk coba lagi. Kulit pisang termasuk sampah organ
 var FACTS=['Sampah organik dapat dijadikan kompos untuk tanaman.','Lingkungan bersih membuat belajar lebih nyaman.','Daur ulang membantu mengurangi sampah.','Pohon membantu menghasilkan udara yang bersih.'];
 
 var draggedEl=null;
+var selectedTrashEl=null;
 
 function isMissionScreen(id){return ['level1','level2','level3','level4'].indexOf(id)!==-1}
 function isDefaultState(){return state.current==='home'&&state.playerName==='Petualang Hijau'&&state.completedMissionCount===0}
@@ -965,15 +982,15 @@ function startContinuousConfetti(){if(confettiInterval)clearInterval(confettiInt
 
 function stopConfetti(){if(confettiInterval){clearInterval(confettiInterval);confettiInterval=null}}
 
-function initLevel1(){state.l1Score=0;var wrap=document.getElementById('trash-items');wrap.innerHTML='';document.getElementById('l1-feedback').textContent='';document.getElementById('l1-feedback').className='feedback';TRASH_DATA.forEach(function(t,idx){var el=document.createElement('div');el.className='trash-item trash-item-'+idx;el.draggable=true;el.tabIndex=0;el.dataset.type=t.type;el.dataset.name=t.name;el.innerHTML='<img src="'+t.img+'" class="trash-icon" alt=""> '+t.name;el.ondragstart=function(e){draggedEl=el;e.dataTransfer.effectAllowed='move';setTimeout(function(){el.style.opacity='.5'},0)};el.ondragend=function(){el.style.opacity='1';draggedEl=null};enableTouchDrag(el);wrap.appendChild(el)})}
+function initLevel1(){state.l1Score=0;selectedTrashEl=null;var wrap=document.getElementById('trash-items');wrap.innerHTML='';document.getElementById('l1-feedback').textContent='';document.getElementById('l1-feedback').className='feedback';TRASH_DATA.forEach(function(t,idx){var el=document.createElement('div');el.className='trash-item trash-item-'+idx;el.draggable=true;el.tabIndex=0;el.dataset.type=t.type;el.dataset.name=t.name;el.innerHTML='<img src="'+t.img+'" class="trash-icon" alt=""> '+t.name;el.ondragstart=function(e){draggedEl=el;e.dataTransfer.effectAllowed='move';setTimeout(function(){el.style.opacity='.5'},0)};el.ondragend=function(){el.style.opacity='1';draggedEl=null};el.onclick=function(e){if(el.style.display==='none')return;if(selectedTrashEl&&selectedTrashEl!==el)selectedTrashEl.classList.remove('selected');el.classList.add('selected');selectedTrashEl=el;e.stopPropagation()};enableTouchDrag(el);wrap.appendChild(el)});document.getElementById('bin-organic').onclick=function(){if(selectedTrashEl)resolveDrop(selectedTrashEl,'organik')};document.getElementById('bin-anorganic').onclick=function(){if(selectedTrashEl)resolveDrop(selectedTrashEl,'anorganik')}}
 
 window.onDragOver=function(e){e.preventDefault();e.currentTarget.classList.add('over')};
 window.onDragLeave=function(e){e.currentTarget.classList.remove('over')};
 window.onDrop=function(e,bin){e.preventDefault();e.currentTarget.classList.remove('over');if(!draggedEl)return;resolveDrop(draggedEl,bin)};
 
-function enableTouchDrag(el){el.addEventListener('touchstart',function(e){draggedEl=el;el.style.opacity='.5'},{passive:false});el.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});el.addEventListener('touchend',function(e){el.style.opacity='1';var t=e.changedTouches[0];var target=document.elementFromPoint(t.clientX,t.clientY);var bin=target?target.closest('.drop-zone'):null;if(bin&&draggedEl){var isOrg=bin.classList.contains('drop-zone-organic');resolveDrop(draggedEl,isOrg?'organik':'anorganik')}draggedEl=null},{passive:false})}
+function enableTouchDrag(el){el.addEventListener('touchstart',function(e){selectedTrashEl=null;document.querySelectorAll('.trash-item.selected').forEach(function(s){s.classList.remove('selected')});el.style.opacity='.5'},{passive:false});el.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});el.addEventListener('touchend',function(e){el.style.opacity='1';el.classList.add('selected');selectedTrashEl=el},{passive:false})}
 
-function resolveDrop(el,bin){var type=el.dataset.type;var name=el.dataset.name;var fb=document.getElementById('l1-feedback');if(type===bin){el.style.display='none';state.l1Score++;pauseMusicForSfx('aud-correct');fb.className='feedback feedback-correct';fb.textContent='\u2705 Benar! ('+state.l1Score+'/6)';if(state.l1Score===6){setTimeout(function(){setCompletedMissionCount(1);showModal('','Kamu mendapat lencana karena berhasil memilah sampah.','Pemilah Hebat',function(){updateMissionDots(1);showFact(0,function(){goTo('level2')})},BADGE_IMAGES[0])},700)}}else{pauseMusicForSfx('aud-wrong');fb.className='feedback feedback-wrong';fb.textContent=WRONG_MSG[name]||'Yuk coba lagi.';el.classList.add('anim-shake');setTimeout(function(){el.classList.remove('anim-shake')},500)}draggedEl=null}
+function resolveDrop(el,bin){var type=el.dataset.type;var name=el.dataset.name;var fb=document.getElementById('l1-feedback');if(type===bin){el.style.display='none';el.classList.remove('selected');state.l1Score++;pauseMusicForSfx('aud-correct');fb.className='feedback feedback-correct';fb.textContent='\u2705 Benar! ('+state.l1Score+'/6)';if(state.l1Score===6){setTimeout(function(){setCompletedMissionCount(1);showModal('','Kamu mendapat lencana karena berhasil memilah sampah.','Pemilah Hebat',function(){updateMissionDots(1);showFact(0,function(){goTo('level2')})},BADGE_IMAGES[0])},700)}}else{pauseMusicForSfx('aud-wrong');fb.className='feedback feedback-wrong';fb.textContent=WRONG_MSG[name]||'Yuk coba lagi.';el.classList.add('anim-shake');setTimeout(function(){el.classList.remove('anim-shake')},500)}draggedEl=null;if(selectedTrashEl===el)selectedTrashEl=null}
 
 function initLevel2(){state.l2Score=0;var area=document.getElementById('school-area');area.querySelectorAll('.dirt-spot').forEach(function(el){el.remove()});for(var i=0;i<LEVEL2_TRASH_DATA.length;i++){var trash=LEVEL2_TRASH_DATA[i];var d=document.createElement('button');d.type='button';d.className='dirt-spot trash-float-anim';d.style.left=trash.left;d.style.top=trash.top;d.style.animationDelay=(i*0.3)+'s';d.dataset.idx=i;d.setAttribute('aria-label','Bersihkan '+trash.name);var img=document.createElement('img');img.src=trash.icon;img.style.width=trash.size+'px';img.style.height=trash.size+'px';img.alt='';d.appendChild(img);d.onclick=function(){var idx=this.dataset.idx;var el=document.querySelector('.dirt-spot[data-idx="'+idx+'"]');if(!el)return;var rect=el.getBoundingClientRect();spawnSparkles(rect.left+rect.width/2,rect.top+rect.height/2);pauseMusicForSfx('aud-correct');el.classList.add('clicked');setTimeout(function(){el.remove()},400);state.l2Score++;updateL2()};area.appendChild(d)}updateL2()}
 
@@ -1012,6 +1029,11 @@ document.addEventListener('keydown',function(e){var key=(e.key||'').toLowerCase(
 syncSoundUi();
 updateTopNav('home');
 preloadAssets();
+
+function checkOrientation(){var overlay=document.getElementById('rotate-overlay');if(!overlay)return;if(window.innerHeight>window.innerWidth){overlay.classList.add('show')}else{overlay.classList.remove('show')}}
+checkOrientation();
+window.addEventListener('resize',checkOrientation);
+window.addEventListener('orientationchange',function(){setTimeout(checkOrientation,300)});
 
 })();
 </script>
