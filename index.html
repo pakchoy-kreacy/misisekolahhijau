@@ -134,7 +134,7 @@ img{max-width:100%;display:block}
 .dot{width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid rgba(255,255,255,.4);transition:all .3s ease}
 .dot.filled{background:#22c55e;border-color:#22c55e;box-shadow:0 0 8px rgba(34,197,94,.5)}
 
-.trash-item{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .8rem;border-radius:12px;font-size:.85rem;font-weight:700;cursor:grab;user-select:none;touch-action:none;transition:transform .15s ease,box-shadow .15s ease;background:#f9fafb;border:2px solid #d1d5db;color:#374151}
+.trash-item{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .8rem;border-radius:12px;font-size:.85rem;font-weight:700;cursor:grab;user-select:none;touch-action:manipulation;transition:transform .15s ease,box-shadow .15s ease;background:#f9fafb;border:2px solid #d1d5db;color:#374151;appearance:none;-webkit-appearance:none}
 .trash-item:active{cursor:grabbing;transform:scale(1.05)}
 .trash-organic{background:#f9fafb;border:2px solid #d1d5db;color:#374151}
 .trash-anorganic{background:#f9fafb;border:2px solid #d1d5db;color:#374151}
@@ -379,6 +379,56 @@ img{max-width:100%;display:block}
   .ending-badges-float{bottom:calc(3.5% + 44px);grid-template-columns:repeat(4,50px);gap:.25rem}
   .ending-badge-item{width:50px;height:50px}
   .ending-badges-float{grid-template-columns:repeat(4,50px)!important}
+}
+@media (max-height:430px) and (orientation:landscape){
+  .screen{padding:.55rem .7rem}
+  .top-nav{top:10px;left:10px;right:10px}
+  .nav-btn{min-height:40px;padding:.45rem .75rem;font-size:.76rem;gap:.35rem}
+  .nav-btn-icon{width:18px;height:18px}
+  .btn{min-height:40px;padding:.55rem .95rem;font-size:.82rem}
+  .card,.card-name,.card-story{padding:.85rem .8rem;border-radius:18px}
+  .title-section,.title-name,.title-story{font-size:clamp(1.1rem,3vw,1.45rem)!important}
+  .subtitle-home{margin-bottom:.9rem!important;padding:.45rem .9rem;font-size:.82rem;max-width:300px}
+  .story-narration{font-size:.88rem;line-height:1.45;max-width:420px}
+  .guide-item{padding:.25rem 0;gap:.55rem}
+  .guide-icon{font-size:1.1rem}
+  .guide-text,.text-body,.text-name{font-size:.8rem;line-height:1.35}
+  .learn-card{padding:.7rem}
+  .learn-card h3{font-size:.95rem;margin-bottom:.35rem}
+  .learn-card ul{font-size:.76rem}
+  .learn-card p{font-size:.66rem;margin-top:.45rem;padding-top:.4rem}
+  .mission-badge{font-size:.64rem!important;padding:.2rem .55rem!important}
+  #screen-level1>div,#screen-level3>div{padding:.55rem!important}
+  .level1-shell{margin-top:0;max-width:560px}
+  .level1-title{font-size:clamp(1.6rem,4vw,2rem)!important;margin-bottom:.35rem!important}
+  .level1-subtitle{font-size:.78rem!important;padding:.4rem .9rem;margin-bottom:.55rem!important}
+  .level1-card{padding:.7rem .75rem .6rem!important}
+  .level1-trash-grid{gap:.45rem .55rem;margin-bottom:.55rem!important}
+  .level1-trash-grid .trash-item{min-height:54px;padding:.45rem .45rem;font-size:.72rem;gap:.28rem}
+  .level1-drop-grid{gap:.5rem}
+  .level1-drop-grid .drop-zone{min-height:78px;padding:.55rem}
+  .bin-img{height:48px}
+  .drop-zone-label{font-size:.72rem}
+  #l1-feedback{margin-top:.45rem!important;font-size:.76rem;min-height:1.2rem}
+  .level3-wrapper{max-width:500px;padding-top:8px}
+  .level3-card{padding:.45rem .55rem!important}
+  .quiz-question-box{padding:.5rem .6rem;margin-bottom:.45rem}
+  .quiz-question-box img{height:58px;margin-bottom:.3rem}
+  .quiz-question-box h3{font-size:.8rem;line-height:1.2}
+  .quiz-option{min-height:42px;padding:.48rem .55rem;font-size:.76rem}
+  .quiz-options-grid{gap:.32rem}
+  .quiz-feedback-box{font-size:.74rem;padding:.35rem .5rem;min-height:1.2rem;margin-top:.4rem}
+  .level2-header,.level4-header{top:42px}
+  .level2-title,.level4-title{font-size:1.8rem!important}
+  .level2-subtitle,.level4-subtitle{font-size:.76rem!important;padding:.38rem .9rem}
+  .mission-counter{bottom:12px;left:12px;padding:.38rem .75rem}
+  .mission-counter-title{font-size:.68rem}
+  .mission-counter-numbers{font-size:1.1rem}
+  .level4-items-bar{bottom:10px;padding:.55rem .7rem;gap:.45rem;width:min(90%,330px)}
+  .level4-item{width:64px;height:58px}
+  .level4-item-icon{font-size:1.5rem}
+  .level4-item-label{font-size:.62rem;line-height:1.05}
+  .level4-placed-item div{font-size:2.25rem!important}
 }
 @media(min-width:1200px){
   .card{max-width:560px}
@@ -636,7 +686,7 @@ img{max-width:100%;display:block}
       </span>
     </div>
     <h2 class="title-main level1-title"><span class="level1-title-icon">&#9851;&#65039;</span><span>Pilah Sampah</span></h2>
-    <p class="subtitle level1-subtitle">Seret setiap sampah ke tempat sampah yang sesuai</p>
+    <p class="subtitle level1-subtitle" id="level1-instruction">Seret setiap sampah ke tempat sampah yang sesuai</p>
     <div class="card level1-card">
       <div id="trash-items" class="level1-trash-grid"></div>
       <div class="level1-drop-grid">
@@ -917,6 +967,7 @@ var selectedTrashEl=null;
 
 function isMissionScreen(id){return ['level1','level2','level3','level4'].indexOf(id)!==-1}
 function isDefaultState(){return state.current==='home'&&state.playerName==='Petualang Hijau'&&state.completedMissionCount===0}
+function prefersTapMission1(){return matchMedia('(pointer: coarse)').matches||('ontouchstart' in window)}
 function syncSoundUi(){var el=document.getElementById('sound-icon-inner');try{if(window.lucide){el.innerHTML=state.soundOn?lucide.icons['volume-2'].toSvg({width:18,height:18}):lucide.icons['volume-x'].toSvg({width:18,height:18})}else{el.innerHTML=state.soundOn?'\ud83d\udd0a':'\ud83d\udd07'}}catch(e){el.innerHTML=state.soundOn?'\ud83d\udd0a':'\ud83d\udd07'};document.getElementById('sound-badge').textContent=state.soundOn?'Musik ON':'Musik OFF'}
 function updateTopNav(id){document.getElementById('btn-home').style.display=(id==='home')?'none':'flex';document.getElementById('btn-back').style.display=isMissionScreen(id)?'flex':'none';document.getElementById('btn-pause').style.display=isMissionScreen(id)?'flex':'none'}
 function readSavedProgress(){try{var raw=window.localStorage.getItem(SAVE_KEY);return raw?JSON.parse(raw):null}catch(e){return null}}
@@ -982,13 +1033,13 @@ function startContinuousConfetti(){if(confettiInterval)clearInterval(confettiInt
 
 function stopConfetti(){if(confettiInterval){clearInterval(confettiInterval);confettiInterval=null}}
 
-function initLevel1(){state.l1Score=0;selectedTrashEl=null;var wrap=document.getElementById('trash-items');wrap.innerHTML='';document.getElementById('l1-feedback').textContent='';document.getElementById('l1-feedback').className='feedback';TRASH_DATA.forEach(function(t,idx){var el=document.createElement('div');el.className='trash-item trash-item-'+idx;el.draggable=true;el.tabIndex=0;el.dataset.type=t.type;el.dataset.name=t.name;el.innerHTML='<img src="'+t.img+'" class="trash-icon" alt=""> '+t.name;el.ondragstart=function(e){draggedEl=el;e.dataTransfer.effectAllowed='move';setTimeout(function(){el.style.opacity='.5'},0)};el.ondragend=function(){el.style.opacity='1';draggedEl=null};el.onclick=function(e){if(el.style.display==='none')return;if(selectedTrashEl&&selectedTrashEl!==el)selectedTrashEl.classList.remove('selected');el.classList.add('selected');selectedTrashEl=el;e.stopPropagation()};enableTouchDrag(el);wrap.appendChild(el)});document.getElementById('bin-organic').onclick=function(){if(selectedTrashEl)resolveDrop(selectedTrashEl,'organik')};document.getElementById('bin-anorganic').onclick=function(){if(selectedTrashEl)resolveDrop(selectedTrashEl,'anorganik')}}
+function initLevel1(){state.l1Score=0;selectedTrashEl=null;var touchMode=prefersTapMission1();var wrap=document.getElementById('trash-items');var instruction=document.getElementById('level1-instruction');wrap.innerHTML='';document.getElementById('l1-feedback').textContent='';document.getElementById('l1-feedback').className='feedback';if(instruction)instruction.textContent=touchMode?'Ketuk sampah, lalu ketuk tempat sampah yang sesuai':'Seret setiap sampah ke tempat sampah yang sesuai';TRASH_DATA.forEach(function(t,idx){var el=document.createElement('button');el.type='button';el.className='trash-item trash-item-'+idx;el.draggable=!touchMode;el.tabIndex=0;el.dataset.type=t.type;el.dataset.name=t.name;el.innerHTML='<img src="'+t.img+'" class="trash-icon" alt=""> '+t.name;el.ondragstart=function(e){if(touchMode){e.preventDefault();return}draggedEl=el;e.dataTransfer.effectAllowed='move';setTimeout(function(){el.style.opacity='.5'},0)};el.ondragend=function(){el.style.opacity='1';draggedEl=null};el.onclick=function(e){if(el.style.display==='none')return;if(selectedTrashEl&&selectedTrashEl!==el)selectedTrashEl.classList.remove('selected');el.classList.add('selected');selectedTrashEl=el;e.stopPropagation()};if(touchMode)enableTouchDrag(el);wrap.appendChild(el)});document.getElementById('bin-organic').onclick=function(){if(selectedTrashEl)resolveDrop(selectedTrashEl,'organik')};document.getElementById('bin-anorganic').onclick=function(){if(selectedTrashEl)resolveDrop(selectedTrashEl,'anorganik')}}
 
 window.onDragOver=function(e){e.preventDefault();e.currentTarget.classList.add('over')};
 window.onDragLeave=function(e){e.currentTarget.classList.remove('over')};
 window.onDrop=function(e,bin){e.preventDefault();e.currentTarget.classList.remove('over');if(!draggedEl)return;resolveDrop(draggedEl,bin)};
 
-function enableTouchDrag(el){el.addEventListener('touchstart',function(e){selectedTrashEl=null;document.querySelectorAll('.trash-item.selected').forEach(function(s){s.classList.remove('selected')});el.style.opacity='.5'},{passive:false});el.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});el.addEventListener('touchend',function(e){el.style.opacity='1';el.classList.add('selected');selectedTrashEl=el},{passive:false})}
+function enableTouchDrag(el){el.addEventListener('touchstart',function(){selectedTrashEl=null;document.querySelectorAll('.trash-item.selected').forEach(function(s){s.classList.remove('selected')});el.style.opacity='.88'},{passive:true});el.addEventListener('touchend',function(){el.style.opacity='1';el.classList.add('selected');selectedTrashEl=el},{passive:true})}
 
 function resolveDrop(el,bin){var type=el.dataset.type;var name=el.dataset.name;var fb=document.getElementById('l1-feedback');if(type===bin){el.style.display='none';el.classList.remove('selected');state.l1Score++;pauseMusicForSfx('aud-correct');fb.className='feedback feedback-correct';fb.textContent='\u2705 Benar! ('+state.l1Score+'/6)';if(state.l1Score===6){setTimeout(function(){setCompletedMissionCount(1);showModal('','Kamu mendapat lencana karena berhasil memilah sampah.','Pemilah Hebat',function(){updateMissionDots(1);showFact(0,function(){goTo('level2')})},BADGE_IMAGES[0])},700)}}else{pauseMusicForSfx('aud-wrong');fb.className='feedback feedback-wrong';fb.textContent=WRONG_MSG[name]||'Yuk coba lagi.';el.classList.add('anim-shake');setTimeout(function(){el.classList.remove('anim-shake')},500)}draggedEl=null;if(selectedTrashEl===el)selectedTrashEl=null}
 
