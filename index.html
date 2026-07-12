@@ -772,9 +772,6 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- QUIZ NOTIFICATION -->
-<div id="quiz-notification" class="quiz-notification" role="status" aria-live="polite" aria-atomic="true"></div>
-
 <!-- LEVEL 4: BANGUN SEKOLAH HIJAU -->
 <section id="screen-level4" class="screen">
   <img src="images/bg-bersihkan-sekolah.webp" alt="" class="bg-photo">
@@ -858,6 +855,11 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
+</div>
+
+<!-- QUIZ NOTIFICATION -->
+<div id="quiz-notification" class="quiz-notification" role="status" aria-live="polite" aria-atomic="true"></div>
+
 <!-- SUCCESS MODAL -->
 <div id="modal-success" class="modal-overlay">
   <div class="modal-card anim-pop">
@@ -865,7 +867,7 @@ img{max-width:100%;display:block}
     <p id="modal-message" class="modal-desc"></p>
     <img id="modal-badge-img" src="" alt="Badge" class="modal-badge-img">
     <div id="modal-badge-name" class="modal-badge-name"></div>
-    <button id="modal-next-btn" class="btn btn-green btn-full">Lanjut &#10145;</button>
+    <button id="modal-next-btn" class="btn btn-green btn-full">Lanjut ➡️</button>
   </div>
 </div>
 
@@ -876,7 +878,7 @@ img{max-width:100%;display:block}
     <h3 class="edukasi-modal-title">Hebat! 🎉</h3>
     <img id="edukasi-img" src="" alt="Edukasi" class="edukasi-modal-img">
     <p id="edukasi-text" class="edukasi-modal-text"></p>
-    <button id="edukasi-next-btn" class="btn btn-green btn-full">Lanjut &#10145;</button>
+    <button id="edukasi-next-btn" class="btn btn-green btn-full">Lanjut ➡️</button>
   </div>
 </div>
 
@@ -901,8 +903,6 @@ img{max-width:100%;display:block}
       <button class="btn btn-white" onclick="startNewGameFromSave()">Mulai Baru</button>
     </div>
   </div>
-</div>
-
 </div>
 
 <div id="rotate-overlay" class="rotate-overlay">
@@ -938,7 +938,7 @@ var TRASH_DATA=[
 ];
 
 var QUIZ_DATA=[
-  {img:'images/trash-plastic-bottle.png',q:'Botol Plastik dapat didaur ulang menjadi?',a:['Pot Bunga','Apel','Mobil'],c:1,edukasiImg:'assets/images/popup-edukasi/recycle-botol-pot.webp',edukasiText:'Botol plastik bekas dapat didaur ulang menjadi pot bunga.'},
+  {img:'images/trash-plastic-bottle.png',q:'Botol Plastik dapat didaur ulang menjadi?',a:['Pot Bunga','Apel','Mobil'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-botol-pot.webp',edukasiText:'Botol plastik bekas dapat didaur ulang menjadi pot bunga.'},
   {img:'images/trash-can-new.png',q:'Kaleng Bekas dapat didaur ulang menjadi?',a:['Tempat Pensil','Sepatu','Pisang'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-kaleng-pensil.webp',edukasiText:'Kaleng bekas dapat didaur ulang menjadi tempat pensil.'},
   {img:'images/trash-dry-leaf.png',q:'Daun Kering dapat dijadikan?',a:['Kompos','Robot','Gelas'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-daun-kompos.webp',edukasiText:'Daun kering dapat diolah menjadi pupuk kompos.'}
 ];
@@ -947,7 +947,7 @@ var LEVEL2_TRASH_DATA=[
   {icon:'images/trash-dry-leaf.png',size:65,left:'44%',top:'82%',name:'Daun Kering'},
   {icon:'images/trash-banana-peel.png',size:60,left:'74%',top:'70%',name:'Kulit Pisang'},
   {icon:'images/trash-candy-wrapper.png',size:68,left:'34%',top:'50%',name:'Bungkus Permen'},
-  {icon:'images/trash-drink-box.png',size:90,left:'62%',top:'78%',name:'Kotak Minuman'},
+  {icon:'images/trash-drink-box.png',size:90,left:'74%',top:'78%',name:'Kotak Minuman'},
   {icon:'images/trash-plastic-bag.png',size:115,left:'20%',top:'58%',name:'Kantong Plastik'},
   {icon:'images/trash-plastic-cup.png',size:90,left:'42%',top:'52%',name:'Gelas Plastik'},
   {icon:'images/trash-tissue.png',size:105,left:'36%',top:'68%',name:'Tisu'},
@@ -959,7 +959,7 @@ var BADGE_IMAGES=['assets/badges/badge-pemilah-hebat.webp','assets/badges/badge-
 var LEVEL4_ITEMS=[
   {id:'tree',emoji:'\ud83c\udf33',lucide:'tree-pine',label:'Pohon',correct:true,message:'\ud83c\udf33 Pohon berhasil ditanam!',errorMsg:'',position:{left:'32%',top:'56%'}},
   {id:'flower',emoji:'\ud83c\udf3c',lucide:'flower-2',label:'Bunga',correct:true,message:'\ud83c\udf3c Bunga berhasil ditanam!',errorMsg:'',position:{left:'64%',top:'52%'}},
-  {id:'bin',emoji:'\ud83d\uddd1\ufe0f',lucide:'trash-2',label:'Tempat Sampah',correct:true,message:'\ud83d\uddd1\ufe0f Tempat sampah berhasil dipasang!',errorMsg:'',position:{left:'48%',top:'52%'}},
+  {id:'bin',emoji:'\ud83d\uddd1\ufe0f',lucide:'trash-2',label:'Tempat Sampah',correct:true,message:'\ud83d\uddd1\ufe0f Tempat sampah berhasil dipasang!',errorMsg:'',position:{left:'48%',top:'58%'}},
   {id:'burning',emoji:'\ud83d\udd25',lucide:'flame',label:'Bakar Sampah',correct:false,message:'',errorMsg:'\u274c Membakar sampah menghasilkan asap beracun yang berbahaya.',position:null},
   {id:'river-pollution',emoji:'\ud83c\udf0a',lucide:'waves',label:'Buang Sampah ke Sungai',correct:false,message:'',errorMsg:'\u274c Sampah di sungai mencemari air dan merusak lingkungan.',position:null},
   {id:'food-waste',emoji:'\ud83c\udf71',lucide:'utensils-crossed',label:'Buang-buang Makanan',correct:false,message:'',errorMsg:'\u274c Membuang makanan adalah pemborosan dan menghasilkan sampah.',position:null}
