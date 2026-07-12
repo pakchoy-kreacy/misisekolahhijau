@@ -930,6 +930,13 @@ img{max-width:100%;display:block}
 <audio id="aud-badge" src="audio/sfx-badge.mp3" preload="auto"></audio>
 <audio id="aud-victory" src="audio/sfx-victory.mp3" preload="auto"></audio>
 <audio id="aud-applause" src="audio/applause.mp3" preload="auto"></audio>
+<audio id="narasi-home" src="audio/narasi-home.mp3" preload="auto"></audio>
+<audio id="narasi-story" src="audio/narasi-story.mp3" preload="auto"></audio>
+<audio id="narasi-learn" src="audio/narasi-learn.mp3" preload="auto"></audio>
+<audio id="narasi-level1" src="audio/narasi-level1.mp3" preload="auto"></audio>
+<audio id="narasi-level2" src="audio/narasi-level2.mp3" preload="auto"></audio>
+<audio id="narasi-level3" src="audio/narasi-level3.mp3" preload="auto"></audio>
+<audio id="narasi-level4" src="audio/narasi-level4.mp3" preload="auto"></audio>
 
 <script>
 (function(){
@@ -994,7 +1001,8 @@ function clearSavedProgress(){try{window.localStorage.removeItem(SAVE_KEY)}catch
 function saveProgress(){if(isDefaultState()){clearSavedProgress();return}try{window.localStorage.setItem(SAVE_KEY,JSON.stringify({current:state.current,playerName:state.playerName,completedMissionCount:state.completedMissionCount,soundOn:state.soundOn,timestamp:Date.now()}))}catch(e){}}
 function setCompletedMissionCount(count){state.completedMissionCount=Math.max(state.completedMissionCount,count);saveProgress()}
 function updateLoadingProgress(done,total){var pct=total?Math.round((done/total)*100):100;document.getElementById('loading-bar-fill').style.width=pct+'%';document.getElementById('loading-progress').textContent=pct+'%';document.getElementById('loading-text').textContent='Memuat aset permainan... '+done+' / '+total}
-function collectAssetPaths(){var images={};var audios={};document.querySelectorAll('img[src]').forEach(function(el){if(el.getAttribute('src'))images[el.getAttribute('src')]=true});document.querySelectorAll('audio[src]').forEach(function(el){if(el.getAttribute('src'))audios[el.getAttribute('src')]=true});TRASH_DATA.forEach(function(item){images[item.img]=true});QUIZ_DATA.forEach(function(item){images[item.img]=true;images[item.edukasiImg]=true});LEVEL2_TRASH_DATA.forEach(function(item){images[item.icon]=true});BADGE_IMAGES.forEach(function(src){images[src]=true});return {images:Object.keys(images).filter(Boolean),audios:Object.keys(audios).filter(Boolean)}}
+var NARASI_PATHS=['audio/narasi-home.mp3','audio/narasi-story.mp3','audio/narasi-learn.mp3','audio/narasi-level1.mp3','audio/narasi-level2.mp3','audio/narasi-level3.mp3','audio/narasi-level4.mp3'];
+function collectAssetPaths(){var images={};var audios={};document.querySelectorAll('img[src]').forEach(function(el){if(el.getAttribute('src'))images[el.getAttribute('src')]=true});document.querySelectorAll('audio[src]').forEach(function(el){if(el.getAttribute('src'))audios[el.getAttribute('src')]=true});TRASH_DATA.forEach(function(item){images[item.img]=true});QUIZ_DATA.forEach(function(item){images[item.img]=true;images[item.edukasiImg]=true});LEVEL2_TRASH_DATA.forEach(function(item){images[item.icon]=true});BADGE_IMAGES.forEach(function(src){images[src]=true});NARASI_PATHS.forEach(function(p){audios[p]=true});return {images:Object.keys(images).filter(Boolean),audios:Object.keys(audios).filter(Boolean)}}
 function preloadAssets(){var assets=collectAssetPaths();var total=assets.images.length+assets.audios.length;var done=0;function markDone(){done++;updateLoadingProgress(done,total)}if(!total){finishLoading();return}updateLoadingProgress(0,total);var imageTasks=assets.images.map(function(src){return new Promise(function(resolve){var img=new Image();var finished=false;function complete(){if(finished)return;finished=true;markDone();resolve()}img.onload=complete;img.onerror=complete;img.src=src;if(img.complete)complete()})});var audioTasks=assets.audios.map(function(src){return new Promise(function(resolve){var aud=new Audio();var finished=false;function complete(){if(finished)return;finished=true;markDone();resolve()}aud.preload='auto';aud.oncanplaythrough=complete;aud.onloadeddata=complete;aud.onerror=complete;aud.src=src;setTimeout(complete,1500);try{aud.load()}catch(e){complete()}})});Promise.allSettled(imageTasks.concat(audioTasks)).then(function(){finishLoading()})}
 function finishLoading(){state.assetsReady=true;var overlay=document.getElementById('loading-overlay');overlay.classList.add('hide');setTimeout(function(){var saved=readSavedProgress();if(saved&&saved.current&&saved.current!=='home'){pendingSaveData=saved;document.getElementById('continue-modal-text').textContent='Halo, '+(saved.playerName||'Petualang Hijau')+'! Progres terakhirmu tersimpan di '+saved.current+'.';document.getElementById('continue-modal').classList.add('show')}},250)}
 function hideContinueModal(){document.getElementById('continue-modal').classList.remove('show')}
@@ -1010,6 +1018,9 @@ window.shareCertificate=function(){var shareText='Aku '+state.playerName+' berha
 
 function updateMissionDots(activeMission){var activeScreen=document.querySelector('.screen.active');if(!activeScreen)return;activeScreen.querySelectorAll('.dot').forEach(function(dot,idx){if(idx<activeMission){dot.classList.add('filled')}else{dot.classList.remove('filled')}})}
 
+var NARASI_SCREENS={home:1,story:1,learn:1,level1:1,level2:1,level3:1,level4:1};
+function playNarasi(id){if(!NARASI_SCREENS[id]||!state.soundOn)return;stopNarasi();var el=document.getElementById('narasi-'+id);if(!el)return;try{el.currentTime=0;el.play().catch(function(){})}catch(e){}}
+function stopNarasi(){for(var key in NARASI_SCREENS){var el=document.getElementById('narasi-'+key);if(el){try{el.pause();el.currentTime=0}catch(e){}}}}
 function playSound(id){if(!state.soundOn)return;var el=document.getElementById(id);if(!el)return;try{el.currentTime=0;el.play().catch(function(){})}catch(e){}}
 window.playClick=function(){playSound('aud-click');ensureMusic()};
 function playCorrect(){playSound('aud-correct')}
@@ -1024,11 +1035,11 @@ function ensureMusic(){if(state.musicStarted||!state.soundOn)return;var bg=docum
 document.addEventListener('click',function unmute(){var bg=document.getElementById('bg-music');bg.muted=false;if(!state.musicStarted&&state.soundOn){bg.play().then(function(){state.musicStarted=true}).catch(function(){})}document.removeEventListener('click',unmute)},{once:true});
 document.addEventListener('touchstart',function unmute(){var bg=document.getElementById('bg-music');bg.muted=false;if(!state.musicStarted&&state.soundOn){bg.play().then(function(){state.musicStarted=true}).catch(function(){})}document.removeEventListener('touchstart',unmute)},{once:true});
 
-window.toggleSound=function(){state.soundOn=!state.soundOn;syncSoundUi();var bg=document.getElementById('bg-music');if(state.soundOn){bg.muted=false;ensureMusic();bg.play().catch(function(){})}else{bg.pause()}saveProgress()};
+window.toggleSound=function(){state.soundOn=!state.soundOn;syncSoundUi();var bg=document.getElementById('bg-music');if(state.soundOn){bg.muted=false;ensureMusic();bg.play().catch(function(){})}else{bg.pause();stopNarasi()}saveProgress()};
 
 var BACK_SCREENS=['guide','name','story','learn','level1','level2','level3','level4','fact','credits','pledge','ending'];
 
-window.goTo=function(id,opts){opts=opts||{};var prev=state.current;if(state.paused&&prev!==id)hidePauseMenu();if(prev!==id&&!opts.skipHistory)state.history.push(prev);state.current=id;document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});var el=document.getElementById('screen-'+id);if(el)el.classList.add('active');updateTopNav(id);updateProgress(id);ensureMusic();var bg=document.getElementById('bg-music');if(prev==='ending'&&id!=='ending'){stopConfetti()}if(id==='level1'){state.mission=1;bg.volume=0.3;updateMissionDots(1);initLevel1()}if(id==='level2'){state.mission=2;bg.volume=0.3;updateMissionDots(2);initLevel2()}if(id==='level3'){state.mission=3;bg.volume=0.3;updateMissionDots(3);initLevel3()}if(id==='level4'){state.mission=4;bg.volume=0.3;updateMissionDots(4);initLevel4()}if(id==='ending'){updateEnding();playVictory();startContinuousConfetti()}if(!opts.silentSave)saveProgress()};
+window.goTo=function(id,opts){opts=opts||{};var prev=state.current;if(state.paused&&prev!==id)hidePauseMenu();if(prev!==id&&!opts.skipHistory)state.history.push(prev);state.current=id;stopNarasi();document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});var el=document.getElementById('screen-'+id);if(el)el.classList.add('active');updateTopNav(id);updateProgress(id);ensureMusic();var bg=document.getElementById('bg-music');if(prev==='ending'&&id!=='ending'){stopConfetti()}if(id==='level1'){state.mission=1;bg.volume=0.3;updateMissionDots(1);initLevel1()}if(id==='level2'){state.mission=2;bg.volume=0.3;updateMissionDots(2);initLevel2()}if(id==='level3'){state.mission=3;bg.volume=0.3;updateMissionDots(3);initLevel3()}if(id==='level4'){state.mission=4;bg.volume=0.3;updateMissionDots(4);initLevel4()}if(id==='ending'){updateEnding();playVictory();startContinuousConfetti()}playNarasi(id);if(!opts.silentSave)saveProgress()};
 
 window.goBack=function(){playClick();if(document.getElementById('continue-modal').classList.contains('show')){startNewGameFromSave();return}if(state.paused){hidePauseMenu();return}if(state.history.length>0){var prev=state.history.pop();goTo(prev,{skipHistory:true})}else{goTo('home')}};
 
