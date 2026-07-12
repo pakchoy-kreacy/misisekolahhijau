@@ -385,6 +385,7 @@ img{max-width:100%;display:block}
   .top-nav{top:10px;left:10px;right:10px}
   .nav-btn{min-height:40px;padding:.45rem .75rem;font-size:.76rem;gap:.35rem}
   .nav-btn-icon{width:18px;height:18px}
+  #nav-right-area{gap:.2rem}
   .btn{min-height:40px;padding:.55rem .95rem;font-size:.82rem}
   .card,.card-name,.card-story{padding:.85rem .8rem;border-radius:18px}
   .title-section,.title-name,.title-story{font-size:clamp(1.1rem,3vw,1.45rem)!important}
@@ -565,16 +566,22 @@ img{max-width:100%;display:block}
     <span class="nav-btn-text">Home</span>
   </button>
   <div></div>
-  <div style="display:flex;gap:.6rem;align-items:center">
-    <button class="nav-btn" id="btn-sound" onclick="toggleSound()">
-      <span class="nav-btn-icon nav-btn-icon-sound" id="sound-icon-inner"><i data-lucide="volume-2"></i></span>
-      <span class="nav-btn-text" id="sound-badge">Musik ON</span>
-    </button>
-    <button class="nav-btn" id="btn-pause" onclick="togglePause()" style="display:none">
-      <span class="nav-btn-icon nav-btn-icon-pause"><i data-lucide="pause"></i></span>
-      <span class="nav-btn-text">Jeda</span>
-    </button>
-    <button class="nav-btn" id="btn-back" onclick="goBack()" style="display:none">
+  <div style="display:flex;flex-direction:column;gap:.3rem;align-items:flex-end" id="nav-right-area">
+    <div style="display:flex;gap:.6rem;align-items:center" id="nav-right-row">
+      <button class="nav-btn" id="btn-back" onclick="goBack()" style="display:none">
+        <span class="nav-btn-icon nav-btn-icon-back"><i data-lucide="arrow-left"></i></span>
+        <span class="nav-btn-text">Kembali</span>
+      </button>
+      <button class="nav-btn" id="btn-pause" onclick="togglePause()" style="display:none">
+        <span class="nav-btn-icon nav-btn-icon-pause"><i data-lucide="pause"></i></span>
+        <span class="nav-btn-text">Jeda</span>
+      </button>
+      <button class="nav-btn" id="btn-sound" onclick="toggleSound()">
+        <span class="nav-btn-icon nav-btn-icon-sound" id="sound-icon-inner"><i data-lucide="volume-2"></i></span>
+        <span class="nav-btn-text" id="sound-badge">Musik ON</span>
+      </button>
+    </div>
+    <button class="nav-btn" id="btn-back-below" onclick="goBack()" style="display:none">
       <span class="nav-btn-icon nav-btn-icon-back"><i data-lucide="arrow-left"></i></span>
       <span class="nav-btn-text">Kembali</span>
     </button>
@@ -931,7 +938,7 @@ var TRASH_DATA=[
 ];
 
 var QUIZ_DATA=[
-  {img:'images/trash-plastic-bottle.png',q:'Botol Plastik dapat didaur ulang menjadi?',a:['Pot Bunga','Apel','Mobil'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-botol-pot.webp',edukasiText:'Botol plastik bekas dapat didaur ulang menjadi pot bunga.'},
+  {img:'images/trash-plastic-bottle.png',q:'Botol Plastik dapat didaur ulang menjadi?',a:['Pot Bunga','Apel','Mobil'],c:1,edukasiImg:'assets/images/popup-edukasi/recycle-botol-pot.webp',edukasiText:'Botol plastik bekas dapat didaur ulang menjadi pot bunga.'},
   {img:'images/trash-can-new.png',q:'Kaleng Bekas dapat didaur ulang menjadi?',a:['Tempat Pensil','Sepatu','Pisang'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-kaleng-pensil.webp',edukasiText:'Kaleng bekas dapat didaur ulang menjadi tempat pensil.'},
   {img:'images/trash-dry-leaf.png',q:'Daun Kering dapat dijadikan?',a:['Kompos','Robot','Gelas'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-daun-kompos.webp',edukasiText:'Daun kering dapat diolah menjadi pupuk kompos.'}
 ];
@@ -941,18 +948,18 @@ var LEVEL2_TRASH_DATA=[
   {icon:'images/trash-banana-peel.png',size:60,left:'74%',top:'70%',name:'Kulit Pisang'},
   {icon:'images/trash-candy-wrapper.png',size:68,left:'34%',top:'50%',name:'Bungkus Permen'},
   {icon:'images/trash-drink-box.png',size:90,left:'62%',top:'78%',name:'Kotak Minuman'},
-  {icon:'images/trash-plastic-bag.png',size:100,left:'20%',top:'58%',name:'Kantong Plastik'},
+  {icon:'images/trash-plastic-bag.png',size:115,left:'20%',top:'58%',name:'Kantong Plastik'},
   {icon:'images/trash-plastic-cup.png',size:90,left:'42%',top:'52%',name:'Gelas Plastik'},
-  {icon:'images/trash-tissue.png',size:90,left:'36%',top:'68%',name:'Tisu'},
+  {icon:'images/trash-tissue.png',size:105,left:'36%',top:'68%',name:'Tisu'},
   {icon:'images/crumpled_snack_wrapper-removebg-preview.png',size:90,left:'64%',top:'48%',name:'Bungkus Snack'}
 ];
 
 var BADGE_IMAGES=['assets/badges/badge-pemilah-hebat.webp','assets/badges/badge-penjaga-kebersihan.webp','assets/badges/badge-ahli-daur-ulang.webp','assets/badges/badge-pahlawan-sekolah-hijau.webp'];
 
 var LEVEL4_ITEMS=[
-  {id:'tree',emoji:'\ud83c\udf33',lucide:'tree-pine',label:'Pohon',correct:true,message:'\ud83c\udf33 Pohon berhasil ditanam!',errorMsg:'',position:{left:'32%',top:'50%'}},
+  {id:'tree',emoji:'\ud83c\udf33',lucide:'tree-pine',label:'Pohon',correct:true,message:'\ud83c\udf33 Pohon berhasil ditanam!',errorMsg:'',position:{left:'32%',top:'56%'}},
   {id:'flower',emoji:'\ud83c\udf3c',lucide:'flower-2',label:'Bunga',correct:true,message:'\ud83c\udf3c Bunga berhasil ditanam!',errorMsg:'',position:{left:'64%',top:'52%'}},
-  {id:'bin',emoji:'\ud83d\uddd1\ufe0f',lucide:'trash-2',label:'Tempat Sampah',correct:true,message:'\ud83d\uddd1\ufe0f Tempat sampah berhasil dipasang!',errorMsg:'',position:{left:'48%',top:'46%'}},
+  {id:'bin',emoji:'\ud83d\uddd1\ufe0f',lucide:'trash-2',label:'Tempat Sampah',correct:true,message:'\ud83d\uddd1\ufe0f Tempat sampah berhasil dipasang!',errorMsg:'',position:{left:'48%',top:'52%'}},
   {id:'burning',emoji:'\ud83d\udd25',lucide:'flame',label:'Bakar Sampah',correct:false,message:'',errorMsg:'\u274c Membakar sampah menghasilkan asap beracun yang berbahaya.',position:null},
   {id:'river-pollution',emoji:'\ud83c\udf0a',lucide:'waves',label:'Buang Sampah ke Sungai',correct:false,message:'',errorMsg:'\u274c Sampah di sungai mencemari air dan merusak lingkungan.',position:null},
   {id:'food-waste',emoji:'\ud83c\udf71',lucide:'utensils-crossed',label:'Buang-buang Makanan',correct:false,message:'',errorMsg:'\u274c Membuang makanan adalah pemborosan dan menghasilkan sampah.',position:null}
@@ -969,7 +976,7 @@ function isMissionScreen(id){return ['level1','level2','level3','level4'].indexO
 function isDefaultState(){return state.current==='home'&&state.playerName==='Petualang Hijau'&&state.completedMissionCount===0}
 function prefersTapMission1(){return matchMedia('(pointer: coarse)').matches||('ontouchstart' in window)}
 function syncSoundUi(){var el=document.getElementById('sound-icon-inner');try{if(window.lucide){el.innerHTML=state.soundOn?lucide.icons['volume-2'].toSvg({width:18,height:18}):lucide.icons['volume-x'].toSvg({width:18,height:18})}else{el.innerHTML=state.soundOn?'\ud83d\udd0a':'\ud83d\udd07'}}catch(e){el.innerHTML=state.soundOn?'\ud83d\udd0a':'\ud83d\udd07'};document.getElementById('sound-badge').textContent=state.soundOn?'Musik ON':'Musik OFF'}
-function updateTopNav(id){document.getElementById('btn-home').style.display=(id==='home')?'none':'flex';document.getElementById('btn-back').style.display=isMissionScreen(id)?'flex':'none';document.getElementById('btn-pause').style.display=isMissionScreen(id)?'flex':'none'}
+function updateTopNav(id){document.getElementById('btn-home').style.display=(id==='home')?'none':'flex';var isMission=isMissionScreen(id);var btnBack=document.getElementById('btn-back');var btnBackBelow=document.getElementById('btn-back-below');var btnPause=document.getElementById('btn-pause');if(id==='level1'){btnBack.style.display='none';btnPause.style.display='flex';btnBackBelow.style.display='flex'}else if(isMission){btnBack.style.display='flex';btnPause.style.display='flex';btnBackBelow.style.display='none'}else{btnBack.style.display='none';btnPause.style.display='none';btnBackBelow.style.display='none'}}
 function readSavedProgress(){try{var raw=window.localStorage.getItem(SAVE_KEY);return raw?JSON.parse(raw):null}catch(e){return null}}
 function clearSavedProgress(){try{window.localStorage.removeItem(SAVE_KEY)}catch(e){}}
 function saveProgress(){if(isDefaultState()){clearSavedProgress();return}try{window.localStorage.setItem(SAVE_KEY,JSON.stringify({current:state.current,playerName:state.playerName,completedMissionCount:state.completedMissionCount,soundOn:state.soundOn,timestamp:Date.now()}))}catch(e){}}
