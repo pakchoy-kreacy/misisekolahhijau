@@ -318,6 +318,7 @@ img{max-width:100%;display:block}
 .credit-blue{background:#eff6ff;color:#1d4ed8}
 
 @media(max-width:480px){
+  .top-nav{top:8px;left:8px;right:8px}
   .char-img{height:80px}
   .char-img-sm{height:52px}
   .bin-img{height:64px}
@@ -325,8 +326,9 @@ img{max-width:100%;display:block}
   .card{padding:1.2rem;border-radius:20px}
   .card-story{padding:1rem .8rem;border-radius:24px}
   .btn{min-height:46px;padding:.75rem 1.2rem}
-  .nav-btn{min-height:48px;padding:.55rem .9rem;font-size:.82rem;gap:.4rem}
-  .nav-btn-icon{width:20px;height:20px;font-size:.85rem}
+  .nav-btn{min-height:42px;padding:.45rem .7rem;font-size:.78rem;gap:.3rem}
+  .nav-btn-icon{width:18px;height:18px;font-size:.8rem}
+  #nav-right-area{gap:.15rem}
   .subtitle-home{font-size:clamp(.82rem,2.3vw,1rem);padding:.55rem 1.2rem;border-radius:14px;margin-bottom:1.4rem!important;max-width:340px}
   .name-input{width:85%;height:52px;font-size:18px;padding:0 .8rem}
   .story-narration{max-width:310px}
@@ -363,9 +365,9 @@ img{max-width:100%;display:block}
   .level4-counter-title{font-size:.72rem}
   .level4-counter-numbers{font-size:1.3rem}
   .level4-items-bar{bottom:15px;padding:.8rem .9rem;gap:.55rem;width:min(92%,360px);justify-content:flex-start}
-  .level4-item{width:72px;height:65px}
-  .level4-item-icon{font-size:1.8rem}
-  .level4-item-label{font-size:.7rem;line-height:1.15;padding:0 .2rem}
+  .level4-item{width:52px;height:48px}
+  .level4-item-icon{font-size:1.2rem}
+  .level4-item-label{font-size:.62rem;line-height:1.1;padding:0 .1rem}
   .level4-placed-item div{font-size:2.5rem!important}
   .trash-item.selected{outline:3px solid #fde047;outline-offset:2px;box-shadow:0 0 0 4px rgba(253,224,71,.4),0 4px 12px rgba(0,0,0,.15)!important;transform:scale(1.05)!important;background:#fefce8!important}
   .level4-notification{padding:1rem 1.5rem;font-size:.95rem}
@@ -426,9 +428,9 @@ img{max-width:100%;display:block}
   .mission-counter-title{font-size:.68rem}
   .mission-counter-numbers{font-size:1.1rem}
   .level4-items-bar{bottom:10px;padding:.55rem .7rem;gap:.45rem;width:min(90%,330px)}
-  .level4-item{width:64px;height:58px}
-  .level4-item-icon{font-size:1.5rem}
-  .level4-item-label{font-size:.62rem;line-height:1.05}
+  .level4-item{width:46px;height:42px}
+  .level4-item-icon{font-size:1rem}
+  .level4-item-label{font-size:.52rem;line-height:1}
   .level4-placed-item div{font-size:2.25rem!important}
   .dirt-spot img{max-width:50px!important;max-height:50px!important}
   .modal-card{max-width:320px;padding:.65rem .6rem}
@@ -948,18 +950,18 @@ var TRASH_DATA=[
 ];
 
 var QUIZ_DATA=[
-  {img:'images/trash-plastic-bottle.png',q:'Botol Plastik dapat didaur ulang menjadi?',a:['Pot Bunga','Apel','Mobil'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-botol-pot.webp',edukasiText:'Botol plastik bekas dapat didaur ulang menjadi pot bunga.'},
+  {img:'images/trash-plastic-bottle.png',q:'Botol Plastik dapat didaur ulang menjadi?',a:['Apel','Pot Bunga','Mobil'],c:1,edukasiImg:'assets/images/popup-edukasi/recycle-botol-pot.webp',edukasiText:'Botol plastik bekas dapat didaur ulang menjadi pot bunga.'},
   {img:'images/trash-can-new.png',q:'Kaleng Bekas dapat didaur ulang menjadi?',a:['Tempat Pensil','Sepatu','Pisang'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-kaleng-pensil.webp',edukasiText:'Kaleng bekas dapat didaur ulang menjadi tempat pensil.'},
   {img:'images/trash-dry-leaf.png',q:'Daun Kering dapat dijadikan?',a:['Kompos','Robot','Gelas'],c:0,edukasiImg:'assets/images/popup-edukasi/recycle-daun-kompos.webp',edukasiText:'Daun kering dapat diolah menjadi pupuk kompos.'}
 ];
 
 var LEVEL2_TRASH_DATA=[
-  {icon:'images/trash-dry-leaf.png',size:65,left:'44%',top:'82%',name:'Daun Kering'},
-  {icon:'images/trash-banana-peel.png',size:60,left:'74%',top:'70%',name:'Kulit Pisang'},
+  {icon:'images/trash-dry-leaf.png',size:65,left:'62%',top:'82%',name:'Daun Kering'},
+  {icon:'images/trash-banana-peel.png',size:60,left:'28%',top:'54%',name:'Kulit Pisang'},
   {icon:'images/trash-candy-wrapper.png',size:68,left:'34%',top:'50%',name:'Bungkus Permen'},
   {icon:'images/trash-drink-box.png',size:90,left:'74%',top:'78%',name:'Kotak Minuman'},
   {icon:'images/trash-plastic-bag.png',size:115,left:'20%',top:'58%',name:'Kantong Plastik'},
-  {icon:'images/trash-plastic-cup.png',size:90,left:'42%',top:'52%',name:'Gelas Plastik'},
+  {icon:'images/trash-plastic-cup.png',size:90,left:'55%',top:'52%',name:'Gelas Plastik'},
   {icon:'images/trash-tissue.png',size:105,left:'36%',top:'68%',name:'Tisu'},
   {icon:'images/crumpled_snack_wrapper-removebg-preview.png',size:90,left:'64%',top:'48%',name:'Bungkus Snack'}
 ];
@@ -1074,11 +1076,11 @@ function answerQuiz(sel,selBtn,correctIndex){if(state.quizAnswered)return;state.
 
 function initLevel4(){state.l4Selected=0;state.l4Placed=[];var itemsWrap=document.getElementById('l4-items');itemsWrap.innerHTML='';var area=document.getElementById('level4-area');area.querySelectorAll('.level4-placed-item').forEach(function(el){el.remove()});var shuffled=LEVEL4_ITEMS.slice();for(var i=shuffled.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var temp=shuffled[i];shuffled[i]=shuffled[j];shuffled[j]=temp}var colors=[0,1,2,3,4,5];for(var i=colors.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var temp=colors[i];colors[i]=colors[j];colors[j]=temp}shuffled.forEach(function(item,idx){var div=document.createElement('button');var colorIdx=colors[idx];div.type='button';div.className='level4-item level4-item-'+colorIdx;div.dataset.id=item.id;div.dataset.correct=item.correct;div.setAttribute('aria-label',item.correct?'Pilih '+item.label+' untuk menghijaukan sekolah':'Pilihan '+item.label);var iconHtml=item.emoji;try{if(window.lucide&&lucide.icons[item.lucide])iconHtml=lucide.icons[item.lucide].toSvg({width:28,height:28,stroke:'#166534'})}catch(e){};div.innerHTML='<div class="level4-item-icon">'+iconHtml+'</div><div class="level4-item-label">'+item.label+'</div>';div.onclick=function(){handleItemClick(item,div)};itemsWrap.appendChild(div)});if(window.lucide)lucide.createIcons();updateL4Score()}
 
-function handleItemClick(item,itemEl){if(itemEl.classList.contains('placed'))return;if(item.correct){itemEl.classList.add('placed');itemEl.setAttribute('aria-disabled','true');state.l4Selected++;state.l4Placed.push(item.id);placeItemOnSchool(item);showNotification(item.message,'success');pauseMusicForSfx('aud-correct');updateL4Score();if(state.l4Selected===3){setTimeout(function(){setCompletedMissionCount(4);showModal('','Kamu mendapat lencana karena berhasil membangun sekolah hijau.','Pahlawan Sekolah Hijau',function(){goTo('credits')},BADGE_IMAGES[3])},800)}}else{itemEl.classList.add('wrong');showNotification(item.errorMsg,'error');pauseMusicForSfx('aud-wrong');setTimeout(function(){itemEl.classList.remove('wrong')},2000)}}
+function handleItemClick(item,itemEl){if(itemEl.classList.contains('placed'))return;if(item.correct){itemEl.classList.add('placed');itemEl.setAttribute('aria-disabled','true');state.l4Selected++;state.l4Placed.push(item.id);placeItemOnSchool(item);showNotification(item.message,'success');pauseMusicForSfx('aud-correct');updateL4Score();if(state.l4Selected===3){setTimeout(function(){setCompletedMissionCount(4);showModal('','Kamu mendapat lencana karena berhasil membangun sekolah hijau.','Pahlawan Sekolah Hijau',function(){goTo('credits')},BADGE_IMAGES[3])},800)}}else{itemEl.classList.add('wrong');showNotification(item.errorMsg,'error');pauseMusicForSfx('aud-wrong');  setTimeout(function(){itemEl.classList.remove('wrong')},4000)}}
 
 function placeItemOnSchool(item){var area=document.getElementById('level4-area');var placed=document.createElement('div');placed.className='level4-placed-item';placed.style.left=item.position.left;placed.style.top=item.position.top;placed.innerHTML='<div style="font-size:3.5rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.3))">'+item.emoji+'</div>';area.appendChild(placed);var rect=area.getBoundingClientRect();spawnSparkles(rect.left+(rect.width*parseFloat(item.position.left)/100),rect.top+(rect.height*parseFloat(item.position.top)/100))}
 
-function showNotification(msg,type){var notif=document.getElementById('l4-notification');notif.textContent=msg;notif.className='level4-notification '+type+' show';setTimeout(function(){notif.classList.remove('show')},4000)}
+function showNotification(msg,type){var notif=document.getElementById('l4-notification');notif.textContent=msg;notif.className='level4-notification '+type+' show';setTimeout(function(){notif.classList.remove('show')},5000)}
 
 function updateL4Score(){document.getElementById('l4-score').textContent=state.l4Selected+' / 3'}
 
