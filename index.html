@@ -121,6 +121,8 @@ img{max-width:100%;display:block}
 .pause-text,.continue-modal-text{font-size:1rem;font-weight:700;color:#166534;line-height:1.55;margin-bottom:1rem}
 .pause-actions,.continue-modal-actions,.ending-actions-fixed{display:flex;gap:.75rem;justify-content:center;align-items:center;flex-wrap:wrap}
 .pause-actions .btn,.continue-modal-actions .btn{min-width:180px}
+#nav-right-area{gap:.3rem}
+#nav-right-row{gap:.6rem}
 .nav-btn:focus-visible,.btn:focus-visible,.quiz-option:focus-visible,.trash-item:focus-visible,.level4-item:focus-visible,.modal-close-btn:focus-visible{outline:3px solid #fde047;outline-offset:3px}
 
 .ending-actions-fixed{position:absolute;bottom:4%;left:50%;transform:translateX(-50%);z-index:10;opacity:0;animation:fadeInStatic .5s ease-out 2.2s forwards;flex-wrap:nowrap}
@@ -318,7 +320,7 @@ img{max-width:100%;display:block}
 .credit-blue{background:#eff6ff;color:#1d4ed8}
 
 @media(max-width:480px){
-  .top-nav{top:4px;left:4px;right:4px}
+  .top-nav{top:14px;left:14px;right:14px;align-items:flex-start}
   .char-img{height:80px}
   .char-img-sm{height:52px}
   .bin-img{height:64px}
@@ -385,7 +387,7 @@ img{max-width:100%;display:block}
 }
 @media (max-height:430px) and (orientation:landscape){
   .screen{padding:.55rem .7rem}
-  .top-nav{top:4px;left:6px;right:6px}
+  .top-nav{top:14px;left:8px;right:8px;align-items:flex-start}
   .nav-btn{min-height:34px;padding:.3rem .5rem;font-size:.68rem;gap:.2rem;border-radius:10px}
   .nav-btn-icon{width:14px;height:14px;font-size:.65rem}
   #nav-right-area{gap:.1rem}
@@ -580,8 +582,8 @@ img{max-width:100%;display:block}
     <span class="nav-btn-text">Home</span>
   </button>
   <div></div>
-  <div style="display:flex;flex-direction:column;gap:.3rem;align-items:flex-end" id="nav-right-area">
-    <div style="display:flex;gap:.6rem;align-items:center" id="nav-right-row">
+  <div style="display:flex;flex-direction:column;align-items:flex-end" id="nav-right-area">
+    <div style="display:flex;align-items:center" id="nav-right-row">
       <button class="nav-btn" id="btn-back" onclick="goBack()" style="display:none">
         <span class="nav-btn-icon nav-btn-icon-back"><i data-lucide="arrow-left"></i></span>
         <span class="nav-btn-text">Kembali</span>
