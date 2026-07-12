@@ -57,7 +57,7 @@ img{max-width:100%;display:block}
 .progress-wrap{position:absolute;top:0;left:0;right:0;height:6px;background:rgba(255,255,255,.3);z-index:50}
 .progress-bar{height:100%;background:linear-gradient(90deg,#fde047,#22c55e);border-radius:0 3px 3px 0;transition:width .5s ease;width:0%}
 
-.top-nav{position:absolute;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;z-index:50;pointer-events:none}
+.top-nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(min(100vw,177.78vh));display:flex;justify-content:space-between;align-items:flex-start;z-index:60;pointer-events:none;padding:0 14px}
 .top-nav>*{pointer-events:auto}
 .nav-btn{background:rgba(255,255,255,.95);border-radius:16px;padding:.65rem 1.1rem;font-size:.88rem;font-weight:800;color:#15803d;box-shadow:0 3px 12px rgba(0,0,0,.15),0 1px 4px rgba(0,0,0,.1);backdrop-filter:blur(10px);transition:all .3s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;gap:.5rem;min-height:52px;border:2px solid rgba(255,255,255,.8);position:relative;overflow:hidden}
 .nav-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.3) 0%,transparent 50%);pointer-events:none}
@@ -320,7 +320,6 @@ img{max-width:100%;display:block}
 .credit-blue{background:#eff6ff;color:#1d4ed8}
 
 @media(max-width:480px){
-  .top-nav{top:14px;left:14px;right:14px;align-items:flex-start}
   .char-img{height:80px}
   .char-img-sm{height:52px}
   .bin-img{height:64px}
@@ -387,7 +386,6 @@ img{max-width:100%;display:block}
 }
 @media (max-height:430px) and (orientation:landscape){
   .screen{padding:.55rem .7rem}
-  .top-nav{top:14px;left:8px;right:8px;align-items:flex-start}
   .nav-btn{min-height:34px;padding:.3rem .5rem;font-size:.68rem;gap:.2rem;border-radius:10px}
   .nav-btn-icon{width:14px;height:14px;font-size:.65rem}
   #nav-right-area{gap:.1rem}
@@ -575,36 +573,6 @@ img{max-width:100%;display:block}
 </div>
 
 <div class="progress-wrap"><div id="progress-bar" class="progress-bar"></div></div>
-
-<div class="top-nav">
-  <button class="nav-btn" id="btn-home" onclick="goTo('home')" style="display:none">
-    <span class="nav-btn-icon nav-btn-icon-home"><i data-lucide="home"></i></span>
-    <span class="nav-btn-text">Home</span>
-  </button>
-  <div></div>
-  <div style="display:flex;flex-direction:column;align-items:flex-end" id="nav-right-area">
-    <div style="display:flex;align-items:center" id="nav-right-row">
-      <button class="nav-btn" id="btn-back" onclick="goBack()" style="display:none">
-        <span class="nav-btn-icon nav-btn-icon-back"><i data-lucide="arrow-left"></i></span>
-        <span class="nav-btn-text">Kembali</span>
-      </button>
-      <button class="nav-btn" id="btn-pause" onclick="togglePause()" style="display:none">
-        <span class="nav-btn-icon nav-btn-icon-pause"><i data-lucide="pause"></i></span>
-        <span class="nav-btn-text">Jeda</span>
-      </button>
-      <button class="nav-btn" id="btn-sound" onclick="toggleSound()">
-        <span class="nav-btn-icon nav-btn-icon-sound" id="sound-icon-inner"><i data-lucide="volume-2"></i></span>
-        <span class="nav-btn-text" id="sound-badge">Musik ON</span>
-      </button>
-    </div>
-    <button class="nav-btn" id="btn-back-below" onclick="goBack()" style="display:none">
-      <span class="nav-btn-icon nav-btn-icon-back"><i data-lucide="arrow-left"></i></span>
-      <span class="nav-btn-text">Kembali</span>
-    </button>
-  </div>
-</div>
-
-
 
 <!-- HOME -->
 <section id="screen-home" class="screen active" onclick="ensureMusic()" ontouchstart="ensureMusic()">
@@ -871,6 +839,34 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
+</div>
+
+<div class="top-nav">
+  <button class="nav-btn" id="btn-home" onclick="goTo('home')" style="display:none">
+    <span class="nav-btn-icon nav-btn-icon-home"><i data-lucide="home"></i></span>
+    <span class="nav-btn-text">Home</span>
+  </button>
+  <div></div>
+  <div style="display:flex;flex-direction:column;align-items:flex-end" id="nav-right-area">
+    <div style="display:flex;align-items:center" id="nav-right-row">
+      <button class="nav-btn" id="btn-back" onclick="goBack()" style="display:none">
+        <span class="nav-btn-icon nav-btn-icon-back"><i data-lucide="arrow-left"></i></span>
+        <span class="nav-btn-text">Kembali</span>
+      </button>
+      <button class="nav-btn" id="btn-pause" onclick="togglePause()" style="display:none">
+        <span class="nav-btn-icon nav-btn-icon-pause"><i data-lucide="pause"></i></span>
+        <span class="nav-btn-text">Jeda</span>
+      </button>
+      <button class="nav-btn" id="btn-sound" onclick="toggleSound()">
+        <span class="nav-btn-icon nav-btn-icon-sound" id="sound-icon-inner"><i data-lucide="volume-2"></i></span>
+        <span class="nav-btn-text" id="sound-badge">Musik ON</span>
+      </button>
+    </div>
+    <button class="nav-btn" id="btn-back-below" onclick="goBack()" style="display:none">
+      <span class="nav-btn-icon nav-btn-icon-back"><i data-lucide="arrow-left"></i></span>
+      <span class="nav-btn-text">Kembali</span>
+    </button>
+  </div>
 </div>
 
 <!-- QUIZ NOTIFICATION -->
