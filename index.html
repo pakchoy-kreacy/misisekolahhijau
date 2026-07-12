@@ -1022,7 +1022,7 @@ function updateMissionDots(activeMission){var activeScreen=document.querySelecto
 var NARASI_SCREENS={home:1,story:1,learn:1,name:1,level1:1,level2:1,level3:1,level4:1};
 var NARASI_BG_VOL=0.3;
 var NARASI_TIMER=null;
-function playNarasi(id){if(!NARASI_SCREENS[id]||!state.soundOn)return;stopNarasi();var el=document.getElementById('narasi-'+id);if(!el)return;var bg=document.getElementById('bg-music');bg.volume=0.04;NARASI_TIMER=setTimeout(function(){try{el.currentTime=0;el.volume=1;el.play().catch(function(){})}catch(e){};NARASI_TIMER=null},600);el.addEventListener('ended',function restore(){bg.volume=NARASI_BG_VOL;el.removeEventListener('ended',restore)},{once:true})}
+function playNarasi(id){if(!NARASI_SCREENS[id]||!state.soundOn)return;stopNarasi();var el=document.getElementById('narasi-'+id);if(!el)return;var bg=document.getElementById('bg-music');bg.volume=0.01;NARASI_TIMER=setTimeout(function(){try{el.currentTime=0;el.volume=1;el.play().catch(function(){})}catch(e){};NARASI_TIMER=null},600);el.addEventListener('ended',function restore(){bg.volume=NARASI_BG_VOL;el.removeEventListener('ended',restore)},{once:true})}
 function stopNarasi(){if(NARASI_TIMER){clearTimeout(NARASI_TIMER);NARASI_TIMER=null};for(var key in NARASI_SCREENS){var el=document.getElementById('narasi-'+key);if(el){try{el.pause();el.currentTime=0}catch(e){}}};document.getElementById('bg-music').volume=NARASI_BG_VOL}
 function playSound(id){if(!state.soundOn)return;var el=document.getElementById(id);if(!el)return;try{el.currentTime=0;el.play().catch(function(){})}catch(e){}}
 window.playClick=function(){playSound('aud-click');ensureMusic()};
